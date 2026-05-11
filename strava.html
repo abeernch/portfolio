@@ -269,10 +269,149 @@
       </div>
     </section>
 
+    <!-- ============== TRAINING LOAD ============== -->
+    <section class="charts-row single reveal">
+      <article class="glass-card">
+        <div class="card-head">
+          <div>
+            <h3 class="card-title">Training Load</h3>
+            <p class="card-sub">Fitness · Fatigue · Form (CTL / ATL / TSB) · 180 days</p>
+          </div>
+          <div class="load-legend">
+            <span><i style="background:#00D9FF"></i>Fitness (CTL)</span>
+            <span><i style="background:#FF4F1F"></i>Fatigue (ATL)</span>
+            <span><i style="background:#B8B0FF"></i>Form (TSB)</span>
+          </div>
+        </div>
+        <div class="card-canvas-wrap">
+          <canvas id="loadChart"></canvas>
+        </div>
+        <div class="load-readout">
+          <div><span class="lr-label">CTL</span><span class="lr-num" style="color:#00D9FF">68</span><span class="lr-trend">↗ +4 / 7d</span></div>
+          <div><span class="lr-label">ATL</span><span class="lr-num" style="color:#FF4F1F">82</span><span class="lr-trend">↗ +9 / 7d</span></div>
+          <div><span class="lr-label">TSB</span><span class="lr-num" style="color:#B8B0FF">−14</span><span class="lr-trend">building</span></div>
+          <div><span class="lr-label">RAMP</span><span class="lr-num">6.2</span><span class="lr-trend">healthy</span></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ============== HR ZONES ============== -->
+    <section class="charts-row reveal">
+      <article class="glass-card chart-card-wide">
+        <div class="card-head">
+          <div>
+            <h3 class="card-title">Time in Heart-Rate Zones</h3>
+            <p class="card-sub">Last 30 days · 142 hours total</p>
+          </div>
+        </div>
+        <div class="zone-bar">
+          <div class="zone z1" style="flex:18"><span class="zlabel">Z1</span><span class="ztime">25h</span></div>
+          <div class="zone z2" style="flex:34"><span class="zlabel">Z2</span><span class="ztime">48h</span></div>
+          <div class="zone z3" style="flex:24"><span class="zlabel">Z3</span><span class="ztime">34h</span></div>
+          <div class="zone z4" style="flex:16"><span class="zlabel">Z4</span><span class="ztime">23h</span></div>
+          <div class="zone z5" style="flex:8"><span class="zlabel">Z5</span><span class="ztime">12h</span></div>
+        </div>
+        <div class="zone-legend">
+          <span><i class="z1"></i>Recovery &lt;120</span>
+          <span><i class="z2"></i>Endurance 120–140</span>
+          <span><i class="z3"></i>Tempo 140–160</span>
+          <span><i class="z4"></i>Threshold 160–175</span>
+          <span><i class="z5"></i>VO₂ max &gt;175</span>
+        </div>
+      </article>
+
+      <article class="glass-card chart-card-narrow">
+        <div class="card-head">
+          <div>
+            <h3 class="card-title">Training Polarisation</h3>
+            <p class="card-sub">Easy / Mod / Hard split</p>
+          </div>
+        </div>
+        <div class="polar-stack">
+          <div class="polar-row"><span class="pr-lbl">Easy</span><div class="pr-track"><div class="pr-fill" style="width:78%;background:#00D9FF"></div></div><span class="pr-val">78%</span></div>
+          <div class="polar-row"><span class="pr-lbl">Moderate</span><div class="pr-track"><div class="pr-fill" style="width:6%;background:#B8B0FF"></div></div><span class="pr-val">6%</span></div>
+          <div class="polar-row"><span class="pr-lbl">Hard</span><div class="pr-track"><div class="pr-fill" style="width:16%;background:#FF4F1F"></div></div><span class="pr-val">16%</span></div>
+        </div>
+        <p class="polar-note">Pyramidal model · target was 80 / 5 / 15</p>
+      </article>
+    </section>
+
+    <!-- ============== PERSONAL RECORDS ============== -->
+    <section class="pr-section reveal">
+      <div class="card-head">
+        <div>
+          <h3 class="card-title">Personal Records</h3>
+          <p class="card-sub">All-time best efforts across sports</p>
+        </div>
+      </div>
+      <div class="pr-grid">
+        <div class="pr-card"><span class="pr-sport ride">RIDE</span><span class="pr-num">312<i>w</i></span><span class="pr-label">FTP · functional threshold</span><span class="pr-when">set Mar 14</span></div>
+        <div class="pr-card"><span class="pr-sport ride">RIDE</span><span class="pr-num">478<i>w</i></span><span class="pr-label">Best 5-min power</span><span class="pr-when">set Feb 02</span></div>
+        <div class="pr-card"><span class="pr-sport ride">RIDE</span><span class="pr-num">186<span class="pr-unit">km</span></span><span class="pr-label">Longest single ride</span><span class="pr-when">set Oct 21</span></div>
+        <div class="pr-card"><span class="pr-sport ride">RIDE</span><span class="pr-num">2,140<span class="pr-unit">m</span></span><span class="pr-label">Biggest climb day</span><span class="pr-when">set Nov 09</span></div>
+        <div class="pr-card"><span class="pr-sport run">RUN</span><span class="pr-num">18:42</span><span class="pr-label">5 km</span><span class="pr-when">set Jan 28</span></div>
+        <div class="pr-card"><span class="pr-sport run">RUN</span><span class="pr-num">39:14</span><span class="pr-label">10 km</span><span class="pr-when">set Mar 06</span></div>
+        <div class="pr-card"><span class="pr-sport run">RUN</span><span class="pr-num">1:28:30</span><span class="pr-label">Half marathon</span><span class="pr-when">set Apr 02</span></div>
+        <div class="pr-card"><span class="pr-sport swim">SWIM</span><span class="pr-num">1:42</span><span class="pr-label">100 m freestyle</span><span class="pr-when">set Feb 18</span></div>
+      </div>
+    </section>
+
+    <!-- ============== GEAR MILEAGE ============== -->
+    <section class="charts-row reveal">
+      <article class="glass-card chart-card-wide">
+        <div class="card-head">
+          <div>
+            <h3 class="card-title">Gear Mileage</h3>
+            <p class="card-sub">Tracking wear toward replacement intervals</p>
+          </div>
+        </div>
+        <div class="gear-list">
+          <div class="gear-row">
+            <span class="gear-name">Cannondale SuperSix · road</span>
+            <div class="gear-bar"><div class="gear-fill" style="width:64%;background:#FF4F1F"></div></div>
+            <span class="gear-val">5,180 / 8,000 km</span>
+          </div>
+          <div class="gear-row">
+            <span class="gear-name">Trek Marlin · gravel</span>
+            <div class="gear-bar"><div class="gear-fill" style="width:31%;background:#FF4F1F"></div></div>
+            <span class="gear-val">1,540 / 5,000 km</span>
+          </div>
+          <div class="gear-row">
+            <span class="gear-name">Hoka Mach 6 · daily trainer</span>
+            <div class="gear-bar"><div class="gear-fill" style="width:84%;background:#00D9FF"></div></div>
+            <span class="gear-val">680 / 800 km <em class="warn">⚠ replace soon</em></span>
+          </div>
+          <div class="gear-row">
+            <span class="gear-name">Saucony Endorphin Pro 3 · race</span>
+            <div class="gear-bar"><div class="gear-fill" style="width:42%;background:#00D9FF"></div></div>
+            <span class="gear-val">210 / 500 km</span>
+          </div>
+          <div class="gear-row">
+            <span class="gear-name">Speedo Aquablade · goggles</span>
+            <div class="gear-bar"><div class="gear-fill" style="width:58%;background:#B8B0FF"></div></div>
+            <span class="gear-val">8 mo / 14 mo</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="glass-card chart-card-narrow">
+        <div class="card-head">
+          <div>
+            <h3 class="card-title">Training Rhythm</h3>
+            <p class="card-sub">When sessions happen</p>
+          </div>
+        </div>
+        <div class="rhythm-grid" id="rhythmGrid"></div>
+        <div class="rhythm-axis">
+          <span>4am</span><span>9am</span><span>2pm</span><span>7pm</span><span>11pm</span>
+        </div>
+        <p class="rhythm-note">Early-bird: 71% before 9am</p>
+      </article>
+    </section>
+
     <!-- ============== CTA ============== -->
     <section class="strava-cta">
       <div class="cta-inner">
-        <p>The full integration with the Strava API is in progress. The next iteration auto-syncs activities live.</p>
         <a href="index.html" class="cta-btn">← Back to portfolio</a>
       </div>
     </section>
@@ -589,6 +728,59 @@
         }
       };
 
+      const renderLoad = () => {
+        const el = document.getElementById('loadChart');
+        if (!el) return;
+        const days = 180;
+        const labels = Array.from({length: days}, (_, i) => i);
+        let s = 7;
+        const r = () => { s = (s * 9301 + 49297) % 233280; return s / 233280; };
+        const tss = Array.from({length: days}, () => 30 + r() * 110);
+        // Exponentially weighted moving averages
+        const ema = (arr, tc) => { const a = 1 - Math.exp(-1/tc); let v = 0; return arr.map(x => v = v + a * (x - v)); };
+        const ctl = ema(tss, 42);
+        const atl = ema(tss, 7);
+        const tsb = ctl.map((c, i) => c - atl[i]);
+        new Chart(el.getContext('2d'), {
+          type: 'line',
+          data: { labels, datasets: [
+            { label: 'Fitness',  data: ctl, borderColor: '#00D9FF', backgroundColor: 'rgba(0,217,255,0.10)', fill: true,  borderWidth: 2, pointRadius: 0, tension: 0.35 },
+            { label: 'Fatigue',  data: atl, borderColor: '#FF4F1F', backgroundColor: 'rgba(255,79,31,0.06)', fill: false, borderWidth: 2, pointRadius: 0, tension: 0.35 },
+            { label: 'Form',     data: tsb, borderColor: '#B8B0FF', borderDash: [4,4], borderWidth: 1.5, pointRadius: 0, tension: 0.35 }
+          ]},
+          options: {
+            responsive: true, maintainAspectRatio: false,
+            plugins: { legend: { display: false }, tooltip: { mode: 'index', intersect: false } },
+            scales: {
+              x: { grid: { color: 'rgba(232,234,255,0.04)' }, ticks: { maxTicksLimit: 8, callback: (v,i) => i % 30 === 0 ? `d-${days-i}` : '' } },
+              y: { grid: { color: 'rgba(232,234,255,0.06)' }, ticks: { stepSize: 30 } }
+            },
+            animation: { duration: 700 }
+          }
+        });
+      };
+
+      const renderRhythm = () => {
+        const g = document.getElementById('rhythmGrid');
+        if (!g) return;
+        let s = 99;
+        const r = () => { s = (s * 9301 + 49297) % 233280; return s / 233280; };
+        for (let d = 0; d < 7; d++) {
+          for (let h = 0; h < 24; h++) {
+            const cell = document.createElement('span');
+            cell.className = 'rh-cell';
+            // weight: early morning (5-9) and evening (17-20) get more activity
+            let w = 0;
+            if (h >= 5 && h <= 9) w = 0.55 + r() * 0.45;
+            else if (h >= 17 && h <= 20) w = 0.25 + r() * 0.45;
+            else if (h >= 4 && h <= 22) w = r() * 0.25;
+            const lvl = Math.min(5, Math.floor(w * 6));
+            cell.dataset.lvl = lvl;
+            g.appendChild(cell);
+          }
+        }
+      };
+
       // ---------- Bootstrap: try real data, fall back to demo ----------
       const render = (data, isLive) => {
         setStatus(data, isLive);
@@ -598,6 +790,8 @@
         renderHeatmap(data);
         renderPace(data);
         renderRecent(data);
+        renderLoad();
+        renderRhythm();
       };
 
       fetch('assets/strava-data.json', { cache: 'no-store' })
