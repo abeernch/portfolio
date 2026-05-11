@@ -352,11 +352,11 @@
         <div class="card-canvas-wrap">
           <canvas id="loadChart"></canvas>
         </div>
-        <div class="load-readout">
-          <div><span class="lr-label">CTL</span><span class="lr-num" style="color:#00D9FF">68</span><span class="lr-trend">↗ +4 / 7d</span></div>
-          <div><span class="lr-label">ATL</span><span class="lr-num" style="color:#FF4F1F">82</span><span class="lr-trend">↗ +9 / 7d</span></div>
-          <div><span class="lr-label">TSB</span><span class="lr-num" style="color:#B8B0FF">−14</span><span class="lr-trend">building</span></div>
-          <div><span class="lr-label">RAMP</span><span class="lr-num">6.2</span><span class="lr-trend">healthy</span></div>
+        <div class="load-readout" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;padding-top:1rem;margin-top:1rem;border-top:1px solid rgba(232,234,255,0.1);">
+          <div style="display:flex;flex-direction:column;gap:0.2rem;"><span style="font:0.66rem/1 'JetBrains Mono',monospace;letter-spacing:0.12em;color:rgba(232,234,255,0.35);text-transform:uppercase;">CTL</span><span style="font:600 1.8rem/1 'Space Grotesk',sans-serif;letter-spacing:-0.02em;color:#00D9FF;">68</span><span style="font:0.7rem/1 'JetBrains Mono',monospace;color:rgba(232,234,255,0.62);">↗ +4 / 7d</span></div>
+          <div style="display:flex;flex-direction:column;gap:0.2rem;"><span style="font:0.66rem/1 'JetBrains Mono',monospace;letter-spacing:0.12em;color:rgba(232,234,255,0.35);text-transform:uppercase;">ATL</span><span style="font:600 1.8rem/1 'Space Grotesk',sans-serif;letter-spacing:-0.02em;color:#FF4F1F;">82</span><span style="font:0.7rem/1 'JetBrains Mono',monospace;color:rgba(232,234,255,0.62);">↗ +9 / 7d</span></div>
+          <div style="display:flex;flex-direction:column;gap:0.2rem;"><span style="font:0.66rem/1 'JetBrains Mono',monospace;letter-spacing:0.12em;color:rgba(232,234,255,0.35);text-transform:uppercase;">TSB</span><span style="font:600 1.8rem/1 'Space Grotesk',sans-serif;letter-spacing:-0.02em;color:#B8B0FF;">−14</span><span style="font:0.7rem/1 'JetBrains Mono',monospace;color:rgba(232,234,255,0.62);">building</span></div>
+          <div style="display:flex;flex-direction:column;gap:0.2rem;"><span style="font:0.66rem/1 'JetBrains Mono',monospace;letter-spacing:0.12em;color:rgba(232,234,255,0.35);text-transform:uppercase;">RAMP</span><span style="font:600 1.8rem/1 'Space Grotesk',sans-serif;letter-spacing:-0.02em;color:#E8EAFF;">6.2</span><span style="font:0.7rem/1 'JetBrains Mono',monospace;color:rgba(232,234,255,0.62);">healthy</span></div>
         </div>
       </article>
     </section>
@@ -370,19 +370,19 @@
             <p class="card-sub">Last 30 days · 142 hours total</p>
           </div>
         </div>
-        <div class="zone-bar">
-          <div class="zone z1" style="flex:18"><span class="zlabel">Z1</span><span class="ztime">25h</span></div>
-          <div class="zone z2" style="flex:34"><span class="zlabel">Z2</span><span class="ztime">48h</span></div>
-          <div class="zone z3" style="flex:24"><span class="zlabel">Z3</span><span class="ztime">34h</span></div>
-          <div class="zone z4" style="flex:16"><span class="zlabel">Z4</span><span class="ztime">23h</span></div>
-          <div class="zone z5" style="flex:8"><span class="zlabel">Z5</span><span class="ztime">12h</span></div>
+        <div class="zone-bar" style="display:flex;height:64px;border-radius:6px;overflow:hidden;border:1px solid rgba(232,234,255,0.1);margin:1rem 0 0.9rem;">
+          <div style="flex:18;background:#4A6FA5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.15rem;color:rgba(232,234,255,0.92);"><span style="font:600 0.72rem/1 'JetBrains Mono',monospace;letter-spacing:0.08em;">Z1</span><span style="font:0.66rem/1 'JetBrains Mono',monospace;">25h</span></div>
+          <div style="flex:34;background:#6FB07A;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.15rem;color:rgba(6,9,26,0.85);"><span style="font:600 0.72rem/1 'JetBrains Mono',monospace;letter-spacing:0.08em;">Z2</span><span style="font:0.66rem/1 'JetBrains Mono',monospace;">48h</span></div>
+          <div style="flex:24;background:#E6C24A;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.15rem;color:rgba(6,9,26,0.85);"><span style="font:600 0.72rem/1 'JetBrains Mono',monospace;letter-spacing:0.08em;">Z3</span><span style="font:0.66rem/1 'JetBrains Mono',monospace;">34h</span></div>
+          <div style="flex:16;background:#E68A3D;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.15rem;color:rgba(6,9,26,0.85);"><span style="font:600 0.72rem/1 'JetBrains Mono',monospace;letter-spacing:0.08em;">Z4</span><span style="font:0.66rem/1 'JetBrains Mono',monospace;">23h</span></div>
+          <div style="flex:8;background:#D94B3D;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.15rem;color:rgba(232,234,255,0.95);"><span style="font:600 0.72rem/1 'JetBrains Mono',monospace;letter-spacing:0.08em;">Z5</span><span style="font:0.66rem/1 'JetBrains Mono',monospace;">12h</span></div>
         </div>
-        <div class="zone-legend">
-          <span><i class="z1"></i>Recovery &lt;120</span>
-          <span><i class="z2"></i>Endurance 120–140</span>
-          <span><i class="z3"></i>Tempo 140–160</span>
-          <span><i class="z4"></i>Threshold 160–175</span>
-          <span><i class="z5"></i>VO₂ max &gt;175</span>
+        <div class="zone-legend" style="display:flex;flex-wrap:wrap;gap:1rem;font:0.66rem/1.4 'JetBrains Mono',monospace;color:rgba(232,234,255,0.62);letter-spacing:0.04em;text-transform:uppercase;">
+          <span style="display:inline-flex;align-items:center;gap:0.4rem;"><i style="width:10px;height:10px;border-radius:2px;background:#4A6FA5;"></i>Recovery &lt;120</span>
+          <span style="display:inline-flex;align-items:center;gap:0.4rem;"><i style="width:10px;height:10px;border-radius:2px;background:#6FB07A;"></i>Endurance 120–140</span>
+          <span style="display:inline-flex;align-items:center;gap:0.4rem;"><i style="width:10px;height:10px;border-radius:2px;background:#E6C24A;"></i>Tempo 140–160</span>
+          <span style="display:inline-flex;align-items:center;gap:0.4rem;"><i style="width:10px;height:10px;border-radius:2px;background:#E68A3D;"></i>Threshold 160–175</span>
+          <span style="display:inline-flex;align-items:center;gap:0.4rem;"><i style="width:10px;height:10px;border-radius:2px;background:#D94B3D;"></i>VO₂ max &gt;175</span>
         </div>
       </article>
 
@@ -393,12 +393,12 @@
             <p class="card-sub">Easy / Mod / Hard split</p>
           </div>
         </div>
-        <div class="polar-stack">
-          <div class="polar-row"><span class="pr-lbl">Easy</span><div class="pr-track"><div class="pr-fill" style="width:78%;background:#00D9FF"></div></div><span class="pr-val">78%</span></div>
-          <div class="polar-row"><span class="pr-lbl">Moderate</span><div class="pr-track"><div class="pr-fill" style="width:6%;background:#B8B0FF"></div></div><span class="pr-val">6%</span></div>
-          <div class="polar-row"><span class="pr-lbl">Hard</span><div class="pr-track"><div class="pr-fill" style="width:16%;background:#FF4F1F"></div></div><span class="pr-val">16%</span></div>
+        <div class="polar-stack" style="display:flex;flex-direction:column;gap:0.9rem;margin:1rem 0 0.6rem;">
+          <div style="display:grid;grid-template-columns:80px 1fr 50px;align-items:center;gap:0.8rem;font:0.78rem/1.4 'JetBrains Mono',monospace;color:rgba(232,234,255,0.62);"><span style="font-size:0.7rem;letter-spacing:0.06em;text-transform:uppercase;">Easy</span><div style="height:10px;background:rgba(232,234,255,0.06);border-radius:999px;overflow:hidden;"><div style="width:78%;background:#00D9FF;height:100%;border-radius:999px;"></div></div><span style="text-align:right;color:#E8EAFF;">78%</span></div>
+          <div style="display:grid;grid-template-columns:80px 1fr 50px;align-items:center;gap:0.8rem;font:0.78rem/1.4 'JetBrains Mono',monospace;color:rgba(232,234,255,0.62);"><span style="font-size:0.7rem;letter-spacing:0.06em;text-transform:uppercase;">Moderate</span><div style="height:10px;background:rgba(232,234,255,0.06);border-radius:999px;overflow:hidden;"><div style="width:6%;background:#B8B0FF;height:100%;border-radius:999px;"></div></div><span style="text-align:right;color:#E8EAFF;">6%</span></div>
+          <div style="display:grid;grid-template-columns:80px 1fr 50px;align-items:center;gap:0.8rem;font:0.78rem/1.4 'JetBrains Mono',monospace;color:rgba(232,234,255,0.62);"><span style="font-size:0.7rem;letter-spacing:0.06em;text-transform:uppercase;">Hard</span><div style="height:10px;background:rgba(232,234,255,0.06);border-radius:999px;overflow:hidden;"><div style="width:16%;background:#FF4F1F;height:100%;border-radius:999px;"></div></div><span style="text-align:right;color:#E8EAFF;">16%</span></div>
         </div>
-        <p class="polar-note">Pyramidal model · target was 80 / 5 / 15</p>
+        <p style="font:0.68rem/1.4 'JetBrains Mono',monospace;color:rgba(232,234,255,0.35);letter-spacing:0.06em;text-transform:uppercase;margin:0.4rem 0 0;">Pyramidal model · target was 80 / 5 / 15</p>
       </article>
     </section>
 
