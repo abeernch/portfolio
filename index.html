@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abeer Nasir Chaudhry · Signal Processing &amp; Algorithm Engineer</title>
+  <meta name="description" content="Abeer Nasir Chaudhry. Signal processing and algorithm development engineer. Radar SP, statistical signal processing, estimation theory, spectral analysis, and geolocation." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F1EDE5'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-size='18' fill='%23161614'%3EA%3C/text%3E%3C/svg%3E" />
+  <script>
+    (function() {
+      var stored = localStorage.getItem('theme');
+      var sysDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var theme = stored || (sysDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ============== AMBIENT SIGNAL BACKGROUND ============== -->
+  <div class="ambient-signal" aria-hidden="true">
+    <svg viewBox="0 0 1440 900" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="signalFade" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="currentColor" stop-opacity="0"/>
+          <stop offset="15%" stop-color="currentColor" stop-opacity="1"/>
+          <stop offset="85%" stop-color="currentColor" stop-opacity="1"/>
+          <stop offset="100%" stop-color="currentColor" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <path class="ambient-wave w1" d="" stroke="url(#signalFade)"/>
+      <path class="ambient-wave w2" d="" stroke="url(#signalFade)"/>
+      <path class="ambient-wave w3" d="" stroke="url(#signalFade)"/>
+      <path class="ambient-wave w4" d="" stroke="url(#signalFade)"/>
+    </svg>
+  </div>
+
+  <!-- ============== HEADER ============== -->
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html" class="brand">
+        <span class="glyph">A</span>
+        <span>Abeer Nasir Chaudhry</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span></button>
+      <div class="nav-links" id="navLinks">
+        <a href="#work" class="active">Work</a>
+        <a href="research.html">Research</a>
+        <a href="strava.html">Strava</a>
+        <a href="photography.html">Photography</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ============== HERO ============== -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid reveal-stagger">
+
+          <div class="hero-meta mono">
+            <span class="caret">&gt;</span>
+            <span>Signal Processing &middot; Algorithm Development</span>
+          </div>
+
+          <h1 class="hero-name">Abeer <span class="last">Nasir Chaudhry</span></h1>
+
+          <p class="hero-tagline">
+            Designing the algorithms that listen. Passive geolocation, radar simulation, and the spaces between signals.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#work" class="btn btn-primary">Selected Work <span class="arrow">→</span></a>
+            <a href="https://github.com/abeernch" target="_blank" rel="noopener" class="btn-now">
+              <span class="now-pulse"></span>
+              Check what I'm working on right now
+              <span class="arrow">↗</span>
+            </a>
+            <a href="#contact" class="btn">Get in Touch</a>
+          </div>
+
+          <div class="hero-figure">
+            <div class="hero-stat">
+              <div class="num">200<span class="unit">m RMSE</span></div>
+              <div class="desc">FDoA Localization at 400 km</div>
+            </div>
+            <div class="hero-stat">
+              <div class="num">&lt;100<span class="unit">ns</span></div>
+              <div class="desc">Wavelet-Denoised Timing Accuracy</div>
+            </div>
+            <div class="hero-stat">
+              <div class="num">11<span class="unit">months</span></div>
+              <div class="desc">End-to-End Radar Simulator</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="hero-signal" aria-hidden="true">
+          <svg viewBox="0 0 900 700" preserveAspectRatio="none">
+            <defs>
+              <radialGradient id="heroSpot" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="white" stop-opacity="1"/>
+                <stop offset="55%" stop-color="white" stop-opacity="0.4"/>
+                <stop offset="100%" stop-color="white" stop-opacity="0"/>
+              </radialGradient>
+              <linearGradient id="heroEdgeX" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="white" stop-opacity="0"/>
+                <stop offset="18%" stop-color="white" stop-opacity="1"/>
+                <stop offset="82%" stop-color="white" stop-opacity="1"/>
+                <stop offset="100%" stop-color="white" stop-opacity="0"/>
+              </linearGradient>
+              <linearGradient id="heroEdgeY" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="white" stop-opacity="0"/>
+                <stop offset="18%" stop-color="white" stop-opacity="1"/>
+                <stop offset="82%" stop-color="white" stop-opacity="1"/>
+                <stop offset="100%" stop-color="white" stop-opacity="0"/>
+              </linearGradient>
+              <mask id="heroEdgeMask">
+                <rect width="900" height="700" fill="url(#heroEdgeX)"/>
+                <rect width="900" height="700" fill="url(#heroEdgeY)" style="mix-blend-mode:multiply"/>
+              </mask>
+              <mask id="heroSpotMask">
+                <circle class="hero-spot" cx="450" cy="350" r="0" fill="url(#heroSpot)"/>
+              </mask>
+            </defs>
+            <g mask="url(#heroEdgeMask)">
+              <g class="hero-warp">
+                <g class="grid grid-base"><path d="M 0 25 L 900 25"/><path d="M 0 50 L 900 50"/><path d="M 0 75 L 900 75"/><path d="M 0 100 L 900 100"/><path d="M 0 125 L 900 125"/><path d="M 0 150 L 900 150"/><path d="M 0 175 L 900 175"/><path d="M 0 200 L 900 200"/><path d="M 0 225 L 900 225"/><path d="M 0 250 L 900 250"/><path d="M 0 275 L 900 275"/><path d="M 0 300 L 900 300"/><path d="M 0 325 L 900 325"/><path d="M 0 350 L 900 350"/><path d="M 0 375 L 900 375"/><path d="M 0 400 L 900 400"/><path d="M 0 425 L 900 425"/><path d="M 0 450 L 900 450"/><path d="M 0 475 L 900 475"/><path d="M 0 500 L 900 500"/><path d="M 0 525 L 900 525"/><path d="M 0 550 L 900 550"/><path d="M 0 575 L 900 575"/><path d="M 0 600 L 900 600"/><path d="M 0 625 L 900 625"/><path d="M 0 650 L 900 650"/><path d="M 0 675 L 900 675"/><path d="M 25 0 L 25 700"/><path d="M 50 0 L 50 700"/><path d="M 75 0 L 75 700"/><path d="M 100 0 L 100 700"/><path d="M 125 0 L 125 700"/><path d="M 150 0 L 150 700"/><path d="M 175 0 L 175 700"/><path d="M 200 0 L 200 700"/><path d="M 225 0 L 225 700"/><path d="M 250 0 L 250 700"/><path d="M 275 0 L 275 700"/><path d="M 300 0 L 300 700"/><path d="M 325 0 L 325 700"/><path d="M 350 0 L 350 700"/><path d="M 375 0 L 375 700"/><path d="M 400 0 L 400 700"/><path d="M 425 0 L 425 700"/><path d="M 450 0 L 450 700"/><path d="M 475 0 L 475 700"/><path d="M 500 0 L 500 700"/><path d="M 525 0 L 525 700"/><path d="M 550 0 L 550 700"/><path d="M 575 0 L 575 700"/><path d="M 600 0 L 600 700"/><path d="M 625 0 L 625 700"/><path d="M 650 0 L 650 700"/><path d="M 675 0 L 675 700"/><path d="M 700 0 L 700 700"/><path d="M 725 0 L 725 700"/><path d="M 750 0 L 750 700"/><path d="M 775 0 L 775 700"/><path d="M 800 0 L 800 700"/><path d="M 825 0 L 825 700"/><path d="M 850 0 L 850 700"/><path d="M 875 0 L 875 700"/></g>
+                <g class="grid grid-spot" mask="url(#heroSpotMask)"><path d="M 0 25 L 900 25"/><path d="M 0 50 L 900 50"/><path d="M 0 75 L 900 75"/><path d="M 0 100 L 900 100"/><path d="M 0 125 L 900 125"/><path d="M 0 150 L 900 150"/><path d="M 0 175 L 900 175"/><path d="M 0 200 L 900 200"/><path d="M 0 225 L 900 225"/><path d="M 0 250 L 900 250"/><path d="M 0 275 L 900 275"/><path d="M 0 300 L 900 300"/><path d="M 0 325 L 900 325"/><path d="M 0 350 L 900 350"/><path d="M 0 375 L 900 375"/><path d="M 0 400 L 900 400"/><path d="M 0 425 L 900 425"/><path d="M 0 450 L 900 450"/><path d="M 0 475 L 900 475"/><path d="M 0 500 L 900 500"/><path d="M 0 525 L 900 525"/><path d="M 0 550 L 900 550"/><path d="M 0 575 L 900 575"/><path d="M 0 600 L 900 600"/><path d="M 0 625 L 900 625"/><path d="M 0 650 L 900 650"/><path d="M 0 675 L 900 675"/><path d="M 25 0 L 25 700"/><path d="M 50 0 L 50 700"/><path d="M 75 0 L 75 700"/><path d="M 100 0 L 100 700"/><path d="M 125 0 L 125 700"/><path d="M 150 0 L 150 700"/><path d="M 175 0 L 175 700"/><path d="M 200 0 L 200 700"/><path d="M 225 0 L 225 700"/><path d="M 250 0 L 250 700"/><path d="M 275 0 L 275 700"/><path d="M 300 0 L 300 700"/><path d="M 325 0 L 325 700"/><path d="M 350 0 L 350 700"/><path d="M 375 0 L 375 700"/><path d="M 400 0 L 400 700"/><path d="M 425 0 L 425 700"/><path d="M 450 0 L 450 700"/><path d="M 475 0 L 475 700"/><path d="M 500 0 L 500 700"/><path d="M 525 0 L 525 700"/><path d="M 550 0 L 550 700"/><path d="M 575 0 L 575 700"/><path d="M 600 0 L 600 700"/><path d="M 625 0 L 625 700"/><path d="M 650 0 L 650 700"/><path d="M 675 0 L 675 700"/><path d="M 700 0 L 700 700"/><path d="M 725 0 L 725 700"/><path d="M 750 0 L 750 700"/><path d="M 775 0 L 775 700"/><path d="M 800 0 L 800 700"/><path d="M 825 0 L 825 700"/><path d="M 850 0 L 850 700"/><path d="M 875 0 L 875 700"/></g>
+              </g>
+            </g>
+          </svg>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============== PROFILE ============== -->
+    <section id="profile">
+      <div class="container">
+        <header class="section-head reveal">
+          <div class="section-num">01</div>
+          <h2 class="section-title">Profile <em>who I am, in brief.</em></h2>
+        </header>
+
+        <p class="profile-lead reveal">
+          Engineer working in <em>statistical signal processing</em>. Current focus on radar SP, estimation theory, spectral analysis, and the practical end of passive geolocation.
+        </p>
+
+        <div class="profile-focus-strip reveal">
+          <div class="profile-focus">
+            <span class="profile-focus-num">F / 01</span>
+            <span class="profile-focus-name">Radar <em>signal processing</em></span>
+            <span class="profile-focus-desc">FDA, FMCW, pulse compression, beamforming. The algorithms that turn echoes into tracks.</span>
+          </div>
+          <div class="profile-focus">
+            <span class="profile-focus-num">F / 02</span>
+            <span class="profile-focus-name">Statistical <em>signal processing</em></span>
+            <span class="profile-focus-desc">Detection, classification, denoising. Working with what the signal actually contains, not what it should.</span>
+          </div>
+          <div class="profile-focus">
+            <span class="profile-focus-num">F / 03</span>
+            <span class="profile-focus-name">Estimation <em>theory</em></span>
+            <span class="profile-focus-desc">Linear and nonlinear parameter estimation, Cramer Rao bounds, Kalman and EKF filtering.</span>
+          </div>
+          <div class="profile-focus">
+            <span class="profile-focus-num">F / 04</span>
+            <span class="profile-focus-name">Spectral <em>analysis</em></span>
+            <span class="profile-focus-desc">Time frequency methods, wavelet MRA, super-resolution, and the patterns that hide in band-limited signals.</span>
+          </div>
+          <div class="profile-focus">
+            <span class="profile-focus-num">F / 05</span>
+            <span class="profile-focus-name">Passive <em>geolocation</em></span>
+            <span class="profile-focus-desc">TDoA, FDoA, multi-lateration, sensor fusion. Distributed asynchronous sensors, real-world constraints.</span>
+          </div>
+        </div>
+
+        <div class="profile-prose reveal">
+          <p>
+            I work on the algorithms that turn radio frequencies and timing measurements into something useful. <strong>Emitter positions, target tracks, denoised waveforms.</strong> Most of what I build lives somewhere between a simulation, a signal processing chain, and an embedded system.
+          </p>
+          <p>
+            Current work at <strong>NASTP</strong> centers on passive geolocation. Earlier graduate research at the <strong>American University of Sharjah</strong> produced a <em>published IEEE TAES paper</em> on the effect of target motion on equivalent transmit beamforming for the Frequency Diverse Array. Marie Sklodowska-Curie Doctoral Networks fellowship awardee, 2023.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== EDUCATION ============== -->
+    <section id="education">
+      <div class="container">
+        <header class="section-head reveal">
+          <div class="section-num">02</div>
+          <h2 class="section-title">Education <em>formal training.</em></h2>
+        </header>
+
+        <div class="edu-grid">
+          <div class="edu-card reveal">
+            <div class="label">2019 to 2021 &middot; Sharjah, UAE</div>
+            <h3>Master of Science, Electrical Engineering</h3>
+            <div class="school">American University of Sharjah</div>
+            <dl>
+              <dt>CGPA</dt><dd>3.78 / 4.00</dd>
+              <dt>Specialization</dt><dd>Radar Signal Processing &middot; Linear Parameter Estimation</dd>
+              <dt>Awards</dt><dd>International Graduate Scholarship</dd>
+            </dl>
+          </div>
+
+          <div class="edu-card reveal">
+            <div class="label">2014 to 2019 &middot; Islamabad, PK</div>
+            <h3>Bachelor of Engineering, Avionics</h3>
+            <div class="school">National University of Sciences and Technology (NUST)</div>
+            <dl>
+              <dt>CGPA</dt><dd>3.32 / 4.00</dd>
+              <dt>Honors</dt><dd>University Gold Medal &middot; Best FYP &middot; Commandant&rsquo;s Honors</dd>
+              <dt>Recognition</dt><dd>Best Avionics System Design</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== EXPERIENCE ============== -->
+    <section id="experience">
+      <div class="container">
+        <header class="section-head reveal">
+          <div class="section-num">03</div>
+          <h2 class="section-title">Experience <em>roles, in reverse chronology.</em></h2>
+        </header>
+
+        <ul class="exp-list">
+
+          <li class="exp-item open" data-exp>
+            <div class="exp-period"><span class="now"></span>Dec 2021 to Now</div>
+            <div>
+              <h3 class="exp-role">DSP Simulation Engineer</h3>
+              <div class="exp-org">National Aerospace Science and Technology Park (NASTP)</div>
+              <div class="exp-detail">
+                <ul>
+                  <li>Designed and implemented a Quadratically Constrained Least Squares (QCLS) Time-Difference-of-Arrival localization algorithm with iterative bias correction, EVD, Tikhonov regularization, and nonlinear optimization.</li>
+                  <li>Built a two-step grid-search FDoA localization solver using Quasi-Newton optimization. RMSE of 200 m at a maximum range of 400 km, full computation in &lt; 300 ms.</li>
+                  <li>Developed a multi-lateration and sensor-fusion algorithm for distributed asynchronous passive sensors, hardware-integrated for full-scale prototyping (20 m to 1050 m accuracy at 400 km range).</li>
+                  <li>Delivered an end-to-end radar simulator for SIL/HIL testing of RF front-end and signal processing chains for passive geolocation systems. Completed in under 11 months.</li>
+                  <li>Integrated channel modeling (Rician, Rayleigh, Multipath, AWGN, TIREM, ITU stds.) and waveform synthesis (FMCW, CW, pulse, M-PSK, FSK, QAM) into the simulator.</li>
+                  <li>Time-invariant wavelet denoising and wavelet MRA for OTA signal reconstruction. SNR improvements of up to 30%, timing accuracy under 100 ns.</li>
+                  <li>Deployed and tested multi-lateration algorithms and a real-time tracker on UBX-160 embedded hardware.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="exp-toggle">Detail</div>
+          </li>
+
+          <li class="exp-item" data-exp>
+            <div class="exp-period">Sep 2019 to Jun 2021</div>
+            <div>
+              <h3 class="exp-role">Graduate Research &amp; Teaching Assistant</h3>
+              <div class="exp-org">American University of Sharjah, UAE</div>
+              <div class="exp-detail">
+                <ul>
+                  <li>Reviewed contemporary Frequency Diverse Array (FDA) literature; identified lapses in fundamental assumptions for FDA used as a primary radar transceiver with equivalent transmit beamforming.</li>
+                  <li>Real-time rectification of mutual-coupling effects in arrays via pre-distortion of jointly estimated mutual coupling coefficients.</li>
+                  <li>FDTD simulations in HFSS with closed boundary conditions to study FDA mutual coupling, neglecting the pattern multiplication effect by design.</li>
+                  <li>Managed five undergraduate labs, graded coursework across eight courses, and ran seminars and workshops.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="exp-toggle">Detail</div>
+          </li>
+
+          <li class="exp-item" data-exp>
+            <div class="exp-period">Apr 2019 to Sep 2019</div>
+            <div>
+              <h3 class="exp-role">Avionics Design Engineer</h3>
+              <div class="exp-org">Project AZM, Pakistan Aeronautical Complex</div>
+              <div class="exp-detail">
+                <ul>
+                  <li>Member of the radar development team. Radar feasibility studies and performance simulations for an AESA radar.</li>
+                  <li>CAD team contributor on aircraft cockpit design for FGFA, working within anthropometric and MIL-STD constraints.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="exp-toggle">Detail</div>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============== SELECTED WORK ============== -->
+    <section id="work">
+      <div class="container">
+        <header class="section-head reveal">
+          <div class="section-num">04</div>
+          <h2 class="section-title">Selected Work <em>things I&rsquo;ve built or solved.</em></h2>
+        </header>
+
+        <div class="work-controls reveal">
+          <div class="work-filter" id="workFilter">
+            <button class="active" data-cat="all">All</button>
+            <button data-cat="radar">Radar / RF</button>
+            <button data-cat="ml">ML / DL</button>
+            <button data-cat="rf">RF Hardware</button>
+            <button data-cat="data">Data &amp; Tooling</button>
+          </div>
+          <div class="work-meta">
+            <span id="workCount">15</span> projects
+          </div>
+        </div>
+
+        <ul class="work-grid">
+          <li class="work-card reveal" data-cat="radar">
+            <div class="card-tag">Radar SP</div>
+            <h3>Passive Emitter Geolocation, TDoA &amp; FDoA</h3>
+            <p>QCLS-TDoA with iterative bias correction; two-step grid-search FDoA with Quasi-Newton optimization. RMSE 200 m at 400 km range, &lt; 300 ms compute.</p>
+            <div class="card-meta"><span>MATLAB</span><span>Python</span><span>Quasi-Newton</span></div>
+          </li>
+
+          <li class="work-card reveal" data-cat="radar">
+            <div class="card-tag">Radar SP</div>
+            <h3>End-to-End Radar Simulator (SIL/HIL)</h3>
+            <p>Full radar simulator for testing RF front-end and signal processing chains for passive geolocation. Channel modeling, waveform synthesis, scenario generation, and sensor models. Built in 11 months.</p>
+            <div class="card-meta"><span>MATLAB</span><span>Simulink</span><span>HIL</span></div>
+          </li>
+
+          <li class="work-card reveal" data-cat="radar">
+            <div class="card-tag">Radar SP</div>
+            <h3>Frequency Diverse Array, Moving Target Generalization</h3>
+            <p>Generalized the equivalent transmit beamforming (ETB) framework for moving targets. Closed-form expressions for beampattern dynamics and a new T<sub>3dB</sub> design metric. Published in IEEE TAES.</p>
+            <div class="card-meta"><span>FDA</span><span>ETB</span><span>IEEE TAES</span></div>
+          </li>
+
+          <li class="work-card reveal" data-cat="radar">
+            <div class="card-tag">Radar SP</div>
+            <h3>Wavelet MRA Denoising for OTA Signals</h3>
+            <p>Time-invariant wavelet denoising for OTA reconstruction of pulse-compressed echoes. SNR gains up to 30%, timing accuracy under 100 ns. Deployed on UBX-160 hardware.</p>
+            <div class="card-meta"><span>Wavelet</span><span>UBX-160</span><span>SDR</span></div>
+          </li>
+
+          <li class="work-card reveal" data-cat="radar">
+            <div class="card-tag">Radar SP</div>
+            <h3>Multi-Lateration &amp; Sensor Fusion</h3>
+            <p>Real-time multi-lateration algorithm for distributed asynchronous passive sensors. Sensor fusion across heterogeneous platforms. 20 m to 1050 m accuracy at 400 km.</p>
+            <div class="card-meta"><span>Sensor Fusion</span><span>EKF</span><span>Real-time</span></div>
+          </li>
+
+          <li class="work-card reveal" data-cat="ml">
+            <div class="card-tag">ML / DL</div>
+            <h3>Real-Time Facial &amp; Emotion Recognition</h3>
+            <p>Cascaded CNN pipeline for facial detection, identity, and seven-class emotion recognition. Optimized for embedded inference. Final-year project, awarded Best FYP at NUST.</p>
+            <div class="card-meta"><span>CNN</span><span>OpenCV</span><span>Embedded</span></div>
+          </li>
+
+          <li class="work-card reveal" data-cat="ml">
+            <div class="card-tag">ML / DL</div>
+            <h3>Radar Waveform Classification</h3>
+            <p>CNN classifier for radar waveform recognition under low-SNR conditions. Spectrogram and Wigner-Ville inputs, transfer learning from pretrained backbones.</p>
+            <div class="card-meta"><span>TensorFlow</span><span>Spectrogram</span><span>Transfer Learning</span></div>
+          </li>
+
+          <li class="work-card reveal" data-cat="ml">
+            <div class="card-tag">ML / DL</div>
+            <h3>Object Detection in Aerial Imagery</h3>
+            <p>YOLO variants tuned for small-object detection in aerial and drone imagery. Custom anchor optimization and data augmentation pipelines.</p>
+            <div class="card-meta"><span>YOLO</span><span>PyTorch</span><span>Aerial</span></div>
+          </li>
+
+          <li class="work-card reveal" data-cat="rf">
+            <div class="card-tag">RF Hardware</div>
+            <h3>Mutual Coupling Pre-Distortion for FDA</h3>
+            <p>Real-time rectification of mutual-coupling effects in linear arrays via pre-distortion of jointly estimated coupling coefficients. HFSS-validated.</p>
+            <div class="card-meta"><span>HFSS</span><span>FDTD</span><span>FDA</span></div>
+          </li>
+
+          <li class="work-card reveal" data-cat="rf">
+            <div class="card-tag">RF Hardware</div>
+            <h3>X-Band Patch Array Design</h3>
+            <p>Microstrip patch array design for X-band radar applications. Element coupling characterization, beamforming network synthesis, and matching network optimization.</p>
+            <div class="card-meta"><span>HFSS</span><span>ADS</span><span>X-band</span></div>
+          </li>
+
+          <li class="work-card reveal" data-cat="rf">
+            <div class="card-tag">RF Hardware</div>
+            <h3>FGFA Cockpit CAD &amp; Avionics Suite</h3>
+            <p>CAD contribution to fifth-generation fighter aircraft cockpit design. Anthropometric layout, MIL-STD compliance, and integration with mission system avionics.</p>
+            <div class="card-meta"><span>CAD</span><span>MIL-STD</span><span>Avionics</span></div>
+          </li>
+
+          <li class="work-card reveal" data-cat="data">
+            <div class="card-tag">Data</div>
+            <h3>Channel Model Library</h3>
+            <p>Modular channel-modeling library covering Rician, Rayleigh, multipath, AWGN, TIREM, and ITU standards. Plug-in interface for radar and SDR simulators.</p>
+            <div class="card-meta"><span>MATLAB</span><span>Channel Modeling</span><span>Library</span></div>
+          </li>
+
+          <li class="work-card reveal" data-cat="data">
+            <div class="card-tag">Data</div>
+            <h3>Waveform Synthesis Toolkit</h3>
+            <p>Parametric waveform generator for FMCW, CW, pulse, M-PSK, FSK, and QAM. Used as the transmit-side reference inside the radar simulator and for SDR experiments.</p>
+            <div class="card-meta"><span>FMCW</span><span>QAM</span><span>SDR</span></div>
+          </li>
+
+          <li class="work-card reveal" data-cat="data">
+            <div class="card-tag">Data</div>
+            <h3>GDoP Analysis Tool</h3>
+            <p>Geometric Dilution of Precision analysis tool for sensor placement optimization in distributed passive geolocation networks. Visualizes RMSE bounds across area-of-interest.</p>
+            <div class="card-meta"><span>MATLAB</span><span>Optimization</span><span>Visualization</span></div>
+          </li>
+
+          <li class="work-card reveal" data-cat="data">
+            <div class="card-tag">Data</div>
+            <h3>Real-Time Tracker on UBX-160</h3>
+            <p>Embedded real-time tracker integrating multi-lateration estimates with motion models. Deployed and field-tested on UBX-160 hardware.</p>
+            <div class="card-meta"><span>UBX-160</span><span>Embedded</span><span>Real-time</span></div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============== PUBLICATIONS ============== -->
+    <section id="publications">
+      <div class="container">
+        <header class="section-head reveal">
+          <div class="section-num">05</div>
+          <h2 class="section-title">Publications &amp; Theses <em>peer-reviewed and research output.</em></h2>
+        </header>
+
+        <ol class="pub-list">
+          <li class="pub-item">
+            <div class="pub-num">P/01</div>
+            <div>
+              <h3 class="pub-title">Effect of Target Motion on Equivalent Transmit Beamforming for the Frequency Diverse Array</h3>
+              <div class="pub-meta">A. N. Chaudhry, H. S. Mir, K. T. Wong &middot; IEEE Transactions on Aerospace and Electronic Systems &middot; doi: 10.1109/TAES.2023.3282192</div>
+              <div class="pub-actions">
+                <a class="pub-walkthrough" href="research.html">Read walkthrough →</a>
+              </div>
+            </div>
+            <a class="pub-link" href="https://doi.org/10.1109/TAES.2023.3282192" target="_blank" rel="noopener">IEEE Xplore ↗</a>
+          </li>
+          <li class="pub-item">
+            <div class="pub-num">T/01</div>
+            <div>
+              <h3 class="pub-title">Practical Considerations in Frequency Diverse Array Radar Signal Processing</h3>
+              <div class="pub-meta">MS Thesis &middot; American University of Sharjah &middot; May 2021</div>
+            </div>
+            <a class="pub-link" href="https://github.com/abeernch" target="_blank" rel="noopener">Access ↗</a>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============== RECOGNITION ============== -->
+    <section id="recognition">
+      <div class="container">
+        <header class="section-head reveal">
+          <div class="section-num">06</div>
+          <h2 class="section-title">Recognition <em>scholarships, fellowships, awards.</em></h2>
+        </header>
+
+        <ul class="rec-list">
+          <li>
+            <div class="rec-year">2023</div>
+            <div class="rec-title">Marie Sklodowska-Curie Actions Doctoral Networks Fellowship<em>Project INTEGRATE</em></div>
+          </li>
+          <li>
+            <div class="rec-year">2023</div>
+            <div class="rec-title">University International Postgraduate Award (UIPA)<em>UNSW, Australia</em></div>
+          </li>
+          <li>
+            <div class="rec-year">2019</div>
+            <div class="rec-title">Rectors&rsquo; Gold Medal, Best Final Year Project<em>Avionics Engineering, NUST</em></div>
+          </li>
+          <li>
+            <div class="rec-year">2019</div>
+            <div class="rec-title">Best Avionics Suite Design<em>NUST</em></div>
+          </li>
+          <li>
+            <div class="rec-year">2019 to 2021</div>
+            <div class="rec-title">International Graduate Student Scholarship<em>American University of Sharjah</em></div>
+          </li>
+          <li>
+            <div class="rec-year">2017 to 2019</div>
+            <div class="rec-title">Academic Mentor<em>College of Aeronautical Engineering, NUST</em></div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============== ENGLISH PROFICIENCY ============== -->
+    <section id="english-proficiency">
+      <div class="container">
+        <header class="section-head reveal">
+          <div class="section-num">07</div>
+          <h2 class="section-title">English Proficiency <em>certified, current.</em></h2>
+        </header>
+
+        <div class="lang-grid">
+          <article class="lang-card pte reveal">
+            <div class="lang-card-head">
+              <span class="lang-test">PTE Academic</span>
+              <span class="lang-date">24 Jun 2023</span>
+            </div>
+            <div class="lang-overall">
+              <span class="lang-score">90<span class="of">/90</span></span>
+              <span class="lang-grade">Perfect score &middot; Overall</span>
+            </div>
+            <div class="lang-breakdown">
+              <div class="lang-skill"><span class="lang-skill-label">Listening</span><span class="lang-skill-bar"><span class="bar-fill" style="--pct:100%"></span></span><span class="lang-skill-num">90</span></div>
+              <div class="lang-skill"><span class="lang-skill-label">Reading</span><span class="lang-skill-bar"><span class="bar-fill" style="--pct:100%"></span></span><span class="lang-skill-num">90</span></div>
+              <div class="lang-skill"><span class="lang-skill-label">Speaking</span><span class="lang-skill-bar"><span class="bar-fill" style="--pct:100%"></span></span><span class="lang-skill-num">90</span></div>
+              <div class="lang-skill"><span class="lang-skill-label">Writing</span><span class="lang-skill-bar"><span class="bar-fill" style="--pct:100%"></span></span><span class="lang-skill-num">90</span></div>
+            </div>
+          </article>
+
+          <article class="lang-card toefl reveal">
+            <div class="lang-card-head">
+              <span class="lang-test">TOEFL iBT</span>
+              <span class="lang-date">13 Jul 2019</span>
+            </div>
+            <div class="lang-overall">
+              <span class="lang-score">102<span class="of">/120</span></span>
+              <span class="lang-grade">High proficiency &middot; ETS</span>
+            </div>
+            <div class="lang-breakdown">
+              <div class="lang-skill"><span class="lang-skill-label">Reading</span><span class="lang-skill-bar"><span class="bar-fill" style="--pct:83%"></span></span><span class="lang-skill-num">25</span></div>
+              <div class="lang-skill"><span class="lang-skill-label">Listening</span><span class="lang-skill-bar"><span class="bar-fill" style="--pct:90%"></span></span><span class="lang-skill-num">27</span></div>
+              <div class="lang-skill"><span class="lang-skill-label">Speaking</span><span class="lang-skill-bar"><span class="bar-fill" style="--pct:83%"></span></span><span class="lang-skill-num">25</span></div>
+              <div class="lang-skill"><span class="lang-skill-label">Writing</span><span class="lang-skill-bar"><span class="bar-fill" style="--pct:83%"></span></span><span class="lang-skill-num">25</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== CAPABILITIES ============== -->
+    <section id="capabilities">
+      <div class="container">
+        <header class="section-head reveal">
+          <div class="section-num">08</div>
+          <h2 class="section-title">Capabilities <em>languages, tools, and craft.</em></h2>
+        </header>
+
+        <div class="cap-grid">
+          <div class="cap-block reveal">
+            <h4>Programming</h4>
+            <ul class="cap-list">
+              <li class="adv">MATLAB <span class="level">/ adv</span></li>
+              <li class="adv">Python <span class="level">/ adv</span></li>
+              <li>SQL <span class="level">/ int</span></li>
+              <li>LabView <span class="level">/ int</span></li>
+              <li>Verilog <span class="level">/ basic</span></li>
+            </ul>
+          </div>
+          <div class="cap-block reveal">
+            <h4>ML / Numerics</h4>
+            <ul class="cap-list">
+              <li>TensorFlow</li><li>Keras</li><li>OpenCV</li><li>XGBoost</li>
+              <li>scikit-learn</li><li>NumPy</li><li>SciPy</li><li>pandas</li>
+              <li>Matplotlib</li><li>seaborn</li>
+            </ul>
+          </div>
+          <div class="cap-block reveal">
+            <h4>Engineering Software</h4>
+            <ul class="cap-list">
+              <li class="adv">Ansys HFSS <span class="level">/ adv</span></li>
+              <li class="adv">Keysight ADS <span class="level">/ adv</span></li>
+              <li class="adv">MultiSim <span class="level">/ adv</span></li>
+              <li>Vivado EDA <span class="level">/ basic</span></li>
+              <li class="adv">Power BI <span class="level">/ adv</span></li>
+              <li class="adv">LaTeX <span class="level">/ adv</span></li>
+            </ul>
+          </div>
+          <div class="cap-block reveal">
+            <h4>Methods &amp; Domains</h4>
+            <ul class="cap-list">
+              <li>Passive geolocation (TDoA, FDoA)</li>
+              <li>Multi-lateration</li>
+              <li>GDoP analysis</li>
+              <li>Wavelet MRA</li>
+              <li>Kalman / EKF</li>
+              <li>FDA radar</li>
+              <li>FDTD</li>
+              <li>Channel modeling</li>
+              <li>Waveform synthesis</li>
+              <li>Transfer learning</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== OUTSIDE WORK ============== -->
+    <section id="outside">
+      <div class="container">
+        <header class="section-head reveal">
+          <div class="section-num">09</div>
+          <h2 class="section-title">Outside Work <em>what I do when the lab closes.</em></h2>
+        </header>
+
+        <div class="outside-intro reveal">
+          <p class="outside-lead">
+            Long-distance endurance, aerial imagery, and time spent away from screens. The cycling data is what eventually became the <em>Strava Ride Analysis</em> project.
+          </p>
+          <div class="outside-links">
+            <a class="outside-link" href="strava.html">
+              <span>Training log</span>
+              <span class="arr">→</span>
+            </a>
+            <a class="outside-link" href="photography.html">
+              <span>Photography</span>
+              <span class="arr">→</span>
+            </a>
+            <a class="outside-link outside-link-ext" href="https://www.strava.com/athletes/29825060" target="_blank" rel="noopener">
+              <span>Follow on Strava</span>
+              <span class="arr">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="outside-grid reveal">
+          <article class="outside-cell">
+            <span class="outside-num">O / 01</span>
+            <h3>Long-distance <em>cycling</em></h3>
+            <p>Endurance road riding. Logging routes and training data on Strava &mdash; the same dataset that fed the Strava Ride Analysis project.</p>
+            <span class="outside-meta">Cycling &middot; Running &middot; Swimming</span>
+          </article>
+
+          <article class="outside-cell">
+            <span class="outside-num">O / 02</span>
+            <h3>Drone <em>photo &amp; video</em></h3>
+            <p>Aerial composition, route scouting, and capturing the landscapes I cycle through. A natural pairing for someone who thinks in arrays and beam patterns.</p>
+            <span class="outside-meta">Hobbyist FPV</span>
+          </article>
+
+          <article class="outside-cell">
+            <span class="outside-num">O / 03</span>
+            <h3>Travel &amp; <em>outdoor exploration</em></h3>
+            <p>Long trips and unfamiliar terrain &mdash; trading the lab for the open road whenever the calendar allows it.</p>
+            <span class="outside-meta">When the work is done</span>
+          </article>
+
+          <article class="outside-cell">
+            <span class="outside-num">O / 04</span>
+            <h3>Mentoring &amp; <em>community</em></h3>
+            <p>Academic mentor at NUST (2017&ndash;20), IEEE Student Officer at AUS, general volunteer with Acts of Kindness Pakistan.</p>
+            <span class="outside-meta">Pay it forward</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== CONTACT ============== -->
+    <section id="contact">
+      <div class="container">
+        <header class="section-head reveal">
+          <div class="section-num">10</div>
+          <h2 class="section-title">Contact <em>how to reach me.</em></h2>
+        </header>
+
+        <div class="contact-grid">
+          <p class="contact-pitch reveal">
+            Open to <em>doctoral research</em>, applied radar and SP roles, and collaborations on signal processing, estimation theory, and applied ML.
+          </p>
+
+          <ul class="contact-list reveal-stagger">
+            <li>
+              <a href="mailto:abeerchaudhryofficial@gmail.com">
+                <span class="channel">Email</span>
+                <span class="value">abeerchaudhryofficial@gmail.com</span>
+                <span class="arr">↗</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://linkedin.com/in/abeer-ch/" target="_blank" rel="noopener">
+                <span class="channel">LinkedIn</span>
+                <span class="value">linkedin.com/in/abeer-ch</span>
+                <span class="arr">↗</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/abeernch" target="_blank" rel="noopener">
+                <span class="channel">GitHub</span>
+                <span class="value">github.com/abeernch</span>
+                <span class="arr">↗</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="brand-block">Abeer Nasir Chaudhry<br/>
+        <span style="font-family:var(--mono);font-size:0.78rem;color:var(--ink-muted);letter-spacing:0.06em;">Signal Processing &middot; Algorithm Engineering</span>
+      </div>
+      <div class="meta">
+        <span><span class="signal-dot"></span> Available for collaboration</span>
+        <span>Last revised, <span id="footerYear">2026</span></span>
+        <span>Built with restraint &middot; <a href="#" style="border-bottom:1px solid currentColor;">Top ↑</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Training Log · Abeer Nasir Chaudhry</title>
+  <meta name="description" content="A live dashboard of cycling, running, and swimming activity. Distance, elevation, pace, and trends." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2306091a'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-size='18' fill='%2300D9FF'%3EA%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body class="strava-immersive">
+
+  <!-- Background animated gradient layers -->
+  <div class="aurora-bg" aria-hidden="true">
+    <div class="aurora-blob a"></div>
+    <div class="aurora-blob b"></div>
+    <div class="aurora-blob c"></div>
+    <div class="aurora-grid"></div>
+    <div class="aurora-grain"></div>
+  </div>
+
+  <!-- ============== HEADER ============== -->
+  <header class="strava-header" id="stravaHeader">
+    <nav class="strava-nav">
+      <a href="index.html" class="strava-brand">
+        <span class="brand-pulse"></span>
+        <span class="brand-name">Abeer Nasir Chaudhry</span>
+      </a>
+      <button class="strava-toggle" aria-label="Menu"><span></span><span></span></button>
+      <div class="strava-links" id="stravaLinks">
+        <a href="index.html#work">Work</a>
+        <a href="research.html">Research</a>
+        <a href="strava.html" class="active">Strava</a>
+        <a href="photography.html">Photography</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ============== HERO ============== -->
+    <section class="strava-hero">
+      <div class="strava-hero-inner">
+        <div class="hero-tag">
+          <span class="tag-dot"></span>
+          <span>Live Training Dashboard</span>
+        </div>
+        <h1 class="strava-hero-title">
+          The <em>endurance</em><br/>
+          dashboard.
+        </h1>
+        <p class="strava-hero-sub">
+          Twelve months of cycling, running, and swimming. Distance, climb, pace, and the slow-burn discipline behind the data.
+        </p>
+
+        <div class="strava-disclaimer" id="stravaStatus">
+          <span class="disc-dot"></span>
+          <span id="stravaStatusText">Loading data...</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== KPI STRIP ============== -->
+    <section class="kpi-strip">
+      <div class="kpi-grid">
+        <article class="kpi reveal">
+          <div class="kpi-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="M6 17 L11 7 L15 11 L18 7"/><circle cx="11" cy="7" r="1.5" fill="currentColor"/></svg>
+          </div>
+          <div class="kpi-num" data-target="7174">0</div>
+          <div class="kpi-unit">km total distance</div>
+          <div class="kpi-trend">↗ 18% YoY</div>
+        </article>
+
+        <article class="kpi reveal">
+          <div class="kpi-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6 V12 L16 14"/></svg>
+          </div>
+          <div class="kpi-num" data-target="412">0</div>
+          <div class="kpi-unit">moving hours</div>
+          <div class="kpi-trend">↗ 22% YoY</div>
+        </article>
+
+        <article class="kpi reveal">
+          <div class="kpi-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 19 L8 11 L12 14 L16 7 L21 13"/><path d="M3 19 H21"/></svg>
+          </div>
+          <div class="kpi-num" data-target="62400">0</div>
+          <div class="kpi-unit">m elevation gained</div>
+          <div class="kpi-trend">≈ 7× Everest</div>
+        </article>
+
+        <article class="kpi reveal">
+          <div class="kpi-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12 H21 M3 6 H21 M3 18 H21"/><circle cx="6" cy="6" r="1.4" fill="currentColor"/><circle cx="14" cy="12" r="1.4" fill="currentColor"/><circle cx="18" cy="18" r="1.4" fill="currentColor"/></svg>
+          </div>
+          <div class="kpi-num" data-target="287">0</div>
+          <div class="kpi-unit">activities logged</div>
+          <div class="kpi-trend">5.5 / week</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============== WEEKLY BARS + DONUT ============== -->
+    <section class="charts-row">
+      <article class="glass-card chart-card-wide reveal">
+        <div class="card-head">
+          <div>
+            <h3 class="card-title">Weekly Distance</h3>
+            <p class="card-sub">Last 26 weeks · stacked by sport</p>
+          </div>
+          <div class="card-toggle">
+            <button class="active" data-sport="all">All</button>
+            <button data-sport="ride">Ride</button>
+            <button data-sport="run">Run</button>
+            <button data-sport="swim">Swim</button>
+          </div>
+        </div>
+        <div class="card-canvas-wrap">
+          <canvas id="weeklyChart"></canvas>
+        </div>
+      </article>
+
+      <article class="glass-card chart-card-narrow reveal">
+        <div class="card-head">
+          <div>
+            <h3 class="card-title">Activity Mix</h3>
+            <p class="card-sub">By distance, last 12 mo</p>
+          </div>
+        </div>
+        <div class="card-canvas-wrap donut-wrap">
+          <canvas id="mixChart"></canvas>
+          <div class="donut-center">
+            <span class="donut-num">287</span>
+            <span class="donut-lbl">activities</span>
+          </div>
+        </div>
+        <ul class="legend">
+          <li><span class="sw" style="background:#FF4F1F"></span>Cycling<span class="pct">62%</span></li>
+          <li><span class="sw" style="background:#00D9FF"></span>Running<span class="pct">26%</span></li>
+          <li><span class="sw" style="background:#B8B0FF"></span>Swimming<span class="pct">9%</span></li>
+          <li><span class="sw" style="background:#5A6485"></span>Other<span class="pct">3%</span></li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- ============== HEATMAP ============== -->
+    <section class="heatmap-section reveal">
+      <div class="card-head">
+        <div>
+          <h3 class="card-title">Activity Heatmap</h3>
+          <p class="card-sub">365 days · color = intensity (km)</p>
+        </div>
+        <div class="legend-pill">
+          <span class="lp-lbl">low</span>
+          <span class="lp-cell l1"></span>
+          <span class="lp-cell l2"></span>
+          <span class="lp-cell l3"></span>
+          <span class="lp-cell l4"></span>
+          <span class="lp-cell l5"></span>
+          <span class="lp-lbl">high</span>
+        </div>
+      </div>
+      <div class="heatmap-wrap glass-card">
+        <div class="heatmap" id="heatmap"></div>
+      </div>
+    </section>
+
+    <!-- ============== PACE LINE ============== -->
+    <section class="charts-row single">
+      <article class="glass-card reveal">
+        <div class="card-head">
+          <div>
+            <h3 class="card-title">Average Pace by Month</h3>
+            <p class="card-sub">Running pace (min/km), 12 months</p>
+          </div>
+        </div>
+        <div class="card-canvas-wrap">
+          <canvas id="paceChart"></canvas>
+        </div>
+      </article>
+    </section>
+
+    <!-- ============== RECENT ACTIVITIES ============== -->
+    <section class="recent-section reveal">
+      <div class="card-head">
+        <div>
+          <h3 class="card-title">Recent Activities</h3>
+          <p class="card-sub">Latest 8 sessions</p>
+        </div>
+      </div>
+      <div class="recent-list glass-card" id="recentList">
+        <div class="ra-row ra-head">
+          <span>Date</span>
+          <span>Activity</span>
+          <span>Distance</span>
+          <span>Time</span>
+          <span>Elev</span>
+          <span>Avg</span>
+        </div>
+        <div class="ra-row">
+          <span class="ra-date">Apr 28</span>
+          <span class="ra-name"><span class="ra-pill ride">Ride</span>Margalla loop</span>
+          <span>74.2 km</span>
+          <span>2:48:11</span>
+          <span>1,140 m</span>
+          <span>26.4 km/h</span>
+        </div>
+        <div class="ra-row">
+          <span class="ra-date">Apr 26</span>
+          <span class="ra-name"><span class="ra-pill run">Run</span>Trail repeats</span>
+          <span>14.6 km</span>
+          <span>1:14:30</span>
+          <span>320 m</span>
+          <span>5:06 / km</span>
+        </div>
+        <div class="ra-row">
+          <span class="ra-date">Apr 24</span>
+          <span class="ra-name"><span class="ra-pill swim">Swim</span>Pool 50m</span>
+          <span>2.0 km</span>
+          <span>0:42:18</span>
+          <span>—</span>
+          <span>2:06 / 100m</span>
+        </div>
+        <div class="ra-row">
+          <span class="ra-date">Apr 22</span>
+          <span class="ra-name"><span class="ra-pill ride">Ride</span>Indoor trainer</span>
+          <span>40.0 km</span>
+          <span>1:20:00</span>
+          <span>—</span>
+          <span>30.0 km/h</span>
+        </div>
+        <div class="ra-row">
+          <span class="ra-date">Apr 20</span>
+          <span class="ra-name"><span class="ra-pill run">Run</span>Long base</span>
+          <span>22.4 km</span>
+          <span>2:03:45</span>
+          <span>180 m</span>
+          <span>5:31 / km</span>
+        </div>
+        <div class="ra-row">
+          <span class="ra-date">Apr 18</span>
+          <span class="ra-name"><span class="ra-pill ride">Ride</span>Murree climb</span>
+          <span>62.8 km</span>
+          <span>2:32:08</span>
+          <span>1,420 m</span>
+          <span>24.8 km/h</span>
+        </div>
+        <div class="ra-row">
+          <span class="ra-date">Apr 15</span>
+          <span class="ra-name"><span class="ra-pill swim">Swim</span>Open water</span>
+          <span>3.2 km</span>
+          <span>1:05:50</span>
+          <span>—</span>
+          <span>2:03 / 100m</span>
+        </div>
+        <div class="ra-row">
+          <span class="ra-date">Apr 13</span>
+          <span class="ra-name"><span class="ra-pill run">Run</span>Tempo</span>
+          <span>10.1 km</span>
+          <span>0:48:22</span>
+          <span>90 m</span>
+          <span>4:47 / km</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== CTA ============== -->
+    <section class="strava-cta">
+      <div class="cta-inner">
+        <p>The full integration with the Strava API is in progress. The next iteration auto-syncs activities live.</p>
+        <a href="index.html" class="cta-btn">← Back to portfolio</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="strava-footer">
+    <div class="strava-footer-inner">
+      <span>Abeer Nasir Chaudhry</span>
+      <span class="dot">·</span>
+      <span>Training Log</span>
+      <span class="dot">·</span>
+      <span class="footer-status"><span class="status-dot"></span> Demo · API integration pending</span>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="main.js"></script>
+  <script>
+    // -------- Strava Page Behaviour --------
+    (() => {
+      // ---------- Header scroll & mobile nav (UI, no data) ----------
+      const sh = document.getElementById('stravaHeader');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 60) sh.classList.add('scrolled');
+        else sh.classList.remove('scrolled');
+      }, { passive: true });
+
+      const t = document.querySelector('.strava-toggle');
+      const l = document.getElementById('stravaLinks');
+      if (t && l) t.addEventListener('click', () => l.classList.toggle('open'));
+
+      // Reveal animations
+      if ('IntersectionObserver' in window) {
+        const revealIO = new IntersectionObserver(entries => {
+          entries.forEach(e => {
+            if (e.isIntersecting) { e.target.classList.add('in'); revealIO.unobserve(e.target); }
+          });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => revealIO.observe(el));
+      }
+
+      // Card-toggle visual state (Ride/Run/Swim/All)
+      document.querySelectorAll('.card-toggle button').forEach(b => {
+        b.addEventListener('click', () => {
+          b.parentElement.querySelectorAll('button').forEach(x => x.classList.remove('active'));
+          b.classList.add('active');
+        });
+      });
+
+      Chart.defaults.font.family = "'JetBrains Mono', monospace";
+      Chart.defaults.font.size = 11;
+      Chart.defaults.color = 'rgba(232,234,255,0.55)';
+      Chart.defaults.borderColor = 'rgba(232,234,255,0.08)';
+
+      // ---------- Demo dataset (used as fallback) ----------
+      const buildDemo = () => {
+        let seed = 1729;
+        const rnd = () => { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; };
+        const weeklyLabels = Array.from({ length: 26 }, (_, i) => `W${i + 1}`);
+        const ride = weeklyLabels.map(() => +(60 + rnd() * 180).toFixed(1));
+        const run  = weeklyLabels.map(() => +(18 + rnd() * 35).toFixed(1));
+        const swim = weeklyLabels.map(() => +(4  + rnd() * 8).toFixed(1));
+
+        let s = 41;
+        const r2 = () => { s = (s * 9301 + 49297) % 233280; return s / 233280; };
+        const heatmap = [];
+        const today = new Date();
+        for (let i = 364; i >= 0; i--) {
+          const d = new Date(today); d.setDate(today.getDate() - i);
+          const v = r2();
+          let level = 0;
+          if (v > 0.35) level = 1;
+          if (v > 0.55) level = 2;
+          if (v > 0.72) level = 3;
+          if (v > 0.86) level = 4;
+          if (v > 0.95) level = 5;
+          heatmap.push({ date: d.toISOString().slice(0,10), distanceKm: +(v * 60).toFixed(1), level });
+        }
+
+        return {
+          lastSync: null, // marker for demo
+          totals: { distanceKm: 7174, movingHours: 412, elevationM: 62400, activityCount: 287 },
+          mix: [
+            { label: 'Cycling',  value: 62, color: '#FF4F1F' },
+            { label: 'Running',  value: 26, color: '#00D9FF' },
+            { label: 'Swimming', value:  9, color: '#B8B0FF' },
+            { label: 'Other',    value:  3, color: '#5A6485' }
+          ],
+          weekly: { labels: weeklyLabels, ride, run, swim },
+          heatmap,
+          paceByMonth: {
+            labels: ['May','Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr'],
+            data:   [5.42, 5.31, 5.20, 5.18, 5.10, 5.05, 4.98, 5.02, 4.95, 4.90, 4.86, 4.82]
+          },
+          recent: [
+            { date: 'Apr 28', name: 'Margalla loop',  type: 'Ride', distanceKm: 74.2, movingTime: '2:48:11', elevationM: 1140, avgDisplay: '26.4 km/h' },
+            { date: 'Apr 26', name: 'Trail repeats',  type: 'Run',  distanceKm: 14.6, movingTime: '1:14:30', elevationM:  320, avgDisplay: '5:06 / km' },
+            { date: 'Apr 24', name: 'Pool 50m',       type: 'Swim', distanceKm:  2.0, movingTime: '0:42:18', elevationM: null, avgDisplay: '2:06 / 100m' },
+            { date: 'Apr 22', name: 'Indoor trainer', type: 'Ride', distanceKm: 40.0, movingTime: '1:20:00', elevationM: null, avgDisplay: '30.0 km/h' },
+            { date: 'Apr 20', name: 'Long base',      type: 'Run',  distanceKm: 22.4, movingTime: '2:03:45', elevationM:  180, avgDisplay: '5:31 / km' },
+            { date: 'Apr 18', name: 'Murree climb',   type: 'Ride', distanceKm: 62.8, movingTime: '2:32:08', elevationM: 1420, avgDisplay: '24.8 km/h' },
+            { date: 'Apr 15', name: 'Open water',     type: 'Swim', distanceKm:  3.2, movingTime: '1:05:50', elevationM: null, avgDisplay: '2:03 / 100m' },
+            { date: 'Apr 13', name: 'Tempo',          type: 'Run',  distanceKm: 10.1, movingTime: '0:48:22', elevationM:   90, avgDisplay: '4:47 / km' }
+          ]
+        };
+      };
+
+      // ---------- Renderers ----------
+      const animateCounter = (el, target, duration = 1800) => {
+        const start = performance.now();
+        const fmt = target >= 1000 ? n => Math.floor(n).toLocaleString() : n => Math.floor(n);
+        const tick = (now) => {
+          const p = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = fmt(target * eased);
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      };
+
+      const renderKPIs = (data) => {
+        const targets = [
+          data.totals.distanceKm,
+          data.totals.movingHours,
+          data.totals.elevationM,
+          data.totals.activityCount
+        ];
+        const els = document.querySelectorAll('.kpi-num');
+        els.forEach((el, i) => {
+          el.dataset.target = targets[i];
+          el.textContent = '0';
+        });
+        if ('IntersectionObserver' in window) {
+          const io = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+              if (e.isIntersecting) {
+                animateCounter(e.target, parseInt(e.target.dataset.target, 10));
+                io.unobserve(e.target);
+              }
+            });
+          }, { threshold: 0.4 });
+          els.forEach(el => io.observe(el));
+        } else {
+          els.forEach((el, i) => el.textContent = targets[i].toLocaleString());
+        }
+      };
+
+      const renderWeekly = (data) => {
+        new Chart(document.getElementById('weeklyChart').getContext('2d'), {
+          type: 'bar',
+          data: {
+            labels: data.weekly.labels,
+            datasets: [
+              { label: 'Ride', data: data.weekly.ride, backgroundColor: '#FF4F1F', stack: 's', borderRadius: 2 },
+              { label: 'Run',  data: data.weekly.run,  backgroundColor: '#00D9FF', stack: 's', borderRadius: 2 },
+              { label: 'Swim', data: data.weekly.swim, backgroundColor: '#B8B0FF', stack: 's', borderRadius: 2 }
+            ]
+          },
+          options: {
+            responsive: true, maintainAspectRatio: false,
+            plugins: {
+              legend: { position: 'top', labels: { color: 'rgba(232,234,255,0.85)', usePointStyle: true, pointStyle: 'rectRounded', padding: 14 } },
+              tooltip: {
+                backgroundColor: 'rgba(6,9,26,0.95)', titleColor: '#00D9FF', bodyColor: '#E8EAFF',
+                borderColor: 'rgba(0,217,255,0.3)', borderWidth: 1,
+                callbacks: { label: (ctx) => `${ctx.dataset.label}: ${ctx.parsed.y.toFixed(1)} km` }
+              }
+            },
+            scales: {
+              x: { stacked: true, grid: { display: false }, ticks: { maxRotation: 0, autoSkip: true, autoSkipPadding: 18 } },
+              y: { stacked: true, grid: { color: 'rgba(232,234,255,0.06)' }, ticks: { callback: (v) => v + ' km' }, beginAtZero: true }
+            }
+          }
+        });
+      };
+
+      const renderMix = (data) => {
+        const colors = data.mix.map(m => m.color);
+        const labels = data.mix.map(m => m.label);
+        const values = data.mix.map(m => m.value);
+        // Update legend swatches/percentages too
+        const legend = document.querySelector('.legend');
+        if (legend) {
+          legend.innerHTML = data.mix.map(m =>
+            `<li><span class="sw" style="background:${m.color}"></span>${m.label}<span class="pct">${m.value}%</span></li>`
+          ).join('');
+        }
+        new Chart(document.getElementById('mixChart').getContext('2d'), {
+          type: 'doughnut',
+          data: { labels, datasets: [{ data: values, backgroundColor: colors, borderColor: 'rgba(6,9,26,0.7)', borderWidth: 3, hoverOffset: 8 }] },
+          options: {
+            responsive: true, maintainAspectRatio: false, cutout: '70%',
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                backgroundColor: 'rgba(6,9,26,0.95)', titleColor: '#00D9FF', bodyColor: '#E8EAFF',
+                callbacks: { label: (ctx) => `${ctx.label}: ${ctx.parsed}%` }
+              }
+            }
+          }
+        });
+        // Update donut center label
+        const dn = document.querySelector('.donut-num');
+        if (dn) dn.textContent = data.totals ? data.totals.activityCount : 0;
+      };
+
+      const renderHeatmap = (data) => {
+        const hm = document.getElementById('heatmap');
+        if (!hm) return;
+        hm.innerHTML = '';
+        // The CSS expects column-major order: 53 columns × 7 rows.
+        // Our heatmap data is oldest-to-newest by day. Pad to a multiple-of-7 boundary
+        // aligned to the day-of-week of the first entry.
+        const cells = data.heatmap.slice();
+        if (cells.length === 0) return;
+        // Pad at the start so the first day in the array lands on its actual weekday row.
+        const firstDow = (new Date(cells[0].date).getDay() + 6) % 7; // make Monday=0
+        for (let i = 0; i < firstDow; i++) cells.unshift({ date: '', level: 0, distanceKm: 0, _pad: true });
+        // Truncate or pad at end to 53*7=371 cells
+        while (cells.length < 371) cells.push({ date: '', level: 0, distanceKm: 0, _pad: true });
+        cells.length = 371;
+        cells.forEach((cell, idx) => {
+          const c = document.createElement('div');
+          c.className = `hm-cell l${cell.level || 0}`;
+          if (cell._pad) c.style.opacity = '0';
+          else if (cell.date) c.title = `${cell.date} · ${cell.distanceKm} km`;
+          c.style.animationDelay = `${idx * 4}ms`;
+          hm.appendChild(c);
+        });
+      };
+
+      const renderPace = (data) => {
+        const ctx = document.getElementById('paceChart').getContext('2d');
+        const grad = ctx.createLinearGradient(0, 0, 0, 280);
+        grad.addColorStop(0, 'rgba(0, 217, 255, 0.35)');
+        grad.addColorStop(1, 'rgba(0, 217, 255, 0)');
+        new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: data.paceByMonth.labels,
+            datasets: [{
+              label: 'Pace (min/km)',
+              data: data.paceByMonth.data,
+              borderColor: '#00D9FF',
+              backgroundColor: grad,
+              tension: 0.4,
+              fill: true,
+              pointBackgroundColor: '#06091a',
+              pointBorderColor: '#00D9FF',
+              pointBorderWidth: 2,
+              pointRadius: 4,
+              pointHoverRadius: 6,
+              spanGaps: true
+            }]
+          },
+          options: {
+            responsive: true, maintainAspectRatio: false,
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                backgroundColor: 'rgba(6,9,26,0.95)', titleColor: '#00D9FF', bodyColor: '#E8EAFF',
+                callbacks: { label: (ctx) => ctx.parsed.y == null ? 'No runs' : `${ctx.parsed.y.toFixed(2)} min/km` }
+              }
+            },
+            scales: {
+              x: { grid: { color: 'rgba(232,234,255,0.06)' } },
+              y: { grid: { color: 'rgba(232,234,255,0.06)' }, reverse: true, ticks: { callback: v => v.toFixed(1) } }
+            }
+          }
+        });
+      };
+
+      const renderRecent = (data) => {
+        const list = document.getElementById('recentList');
+        if (!list) return;
+        // Remove all existing rows except the head
+        list.querySelectorAll('.ra-row:not(.ra-head)').forEach(el => el.remove());
+        const escape = s => String(s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+        data.recent.forEach(a => {
+          const row = document.createElement('div');
+          row.className = 'ra-row';
+          const elev = a.elevationM == null ? '—' : `${Number(a.elevationM).toLocaleString()} m`;
+          const pillCls = a.type === 'Ride' ? 'ride' : a.type === 'Run' ? 'run' : a.type === 'Swim' ? 'swim' : 'ride';
+          row.innerHTML = `
+            <span class="ra-date">${escape(a.date)}</span>
+            <span class="ra-name"><span class="ra-pill ${pillCls}">${escape(a.type)}</span>${escape(a.name)}</span>
+            <span>${a.distanceKm.toFixed(1)} km</span>
+            <span>${escape(a.movingTime)}</span>
+            <span>${elev}</span>
+            <span>${escape(a.avgDisplay)}</span>
+          `;
+          list.appendChild(row);
+        });
+      };
+
+      const setStatus = (data, isLive) => {
+        const statusEl = document.getElementById('stravaStatus');
+        const textEl = document.getElementById('stravaStatusText');
+        if (!textEl) return;
+        if (isLive && data.lastSync) {
+          const d = new Date(data.lastSync);
+          const ago = Math.floor((Date.now() - d.getTime()) / 60000);
+          let agoStr;
+          if (ago < 60) agoStr = `${ago} min ago`;
+          else if (ago < 1440) agoStr = `${Math.floor(ago/60)} hr ago`;
+          else agoStr = `${Math.floor(ago/1440)} days ago`;
+          textEl.textContent = `Live data · last sync ${agoStr}`;
+          if (statusEl) statusEl.style.borderLeftColor = '#00D9FF';
+          const dot = statusEl && statusEl.querySelector('.disc-dot');
+          if (dot) dot.style.background = '#00D9FF';
+        } else {
+          textEl.textContent = 'Demo data · live sync via GitHub Actions pending';
+        }
+      };
+
+      // ---------- Bootstrap: try real data, fall back to demo ----------
+      const render = (data, isLive) => {
+        setStatus(data, isLive);
+        renderKPIs(data);
+        renderWeekly(data);
+        renderMix(data);
+        renderHeatmap(data);
+        renderPace(data);
+        renderRecent(data);
+      };
+
+      fetch('assets/strava-data.json', { cache: 'no-store' })
+        .then(r => r.ok ? r.json() : Promise.reject('http-' + r.status))
+        .then(data => render(data, true))
+        .catch(() => render(buildDemo(), false));
+    })();
+  </script>
+</body>
+</html>
