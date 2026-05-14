@@ -1,10 +1,10 @@
 {
-  "lastSync": "2026-05-13T06:52:45.957Z",
+  "lastSync": "2026-05-14T06:49:56.444Z",
   "totals": {
-    "distanceKm": 885,
-    "movingHours": 87,
-    "elevationM": 8689,
-    "activityCount": 156
+    "distanceKm": 890,
+    "movingHours": 88,
+    "elevationM": 8736,
+    "activityCount": 159
   },
   "mix": [
     {
@@ -111,7 +111,7 @@
       5,
       0,
       0,
-      0
+      2.9
     ],
     "swim": [
       0,
@@ -143,11 +143,6 @@
     ]
   },
   "heatmap": [
-    {
-      "date": "2025-05-14",
-      "distanceKm": 0,
-      "level": 0
-    },
     {
       "date": "2025-05-15",
       "distanceKm": 0,
@@ -1965,6 +1960,11 @@
     },
     {
       "date": "2026-05-13",
+      "distanceKm": 6,
+      "level": 1
+    },
+    {
+      "date": "2026-05-14",
       "distanceKm": 0,
       "level": 0
     }
@@ -1996,10 +1996,37 @@
       6.56,
       6.13,
       6.77,
-      null
+      6.91
     ]
   },
   "recent": [
+    {
+      "date": "May 13",
+      "name": "Night Walk",
+      "type": "Ride",
+      "distanceKm": 1.9,
+      "movingTime": "0:22:10",
+      "elevationM": 31,
+      "avgDisplay": "—"
+    },
+    {
+      "date": "May 13",
+      "name": "Evening Run",
+      "type": "Run",
+      "distanceKm": 2.9,
+      "movingTime": "0:20:21",
+      "elevationM": 12,
+      "avgDisplay": "6:55 / km"
+    },
+    {
+      "date": "May 13",
+      "name": "Evening Walk",
+      "type": "Ride",
+      "distanceKm": 1.1,
+      "movingTime": "0:12:25",
+      "elevationM": 5,
+      "avgDisplay": "—"
+    },
     {
       "date": "May 3",
       "name": "Evening Ride",
@@ -2044,33 +2071,6 @@
       "movingTime": "0:08:01",
       "elevationM": 37,
       "avgDisplay": "15.0 km/h"
-    },
-    {
-      "date": "Apr 24",
-      "name": "Evening Walk",
-      "type": "Ride",
-      "distanceKm": 0.5,
-      "movingTime": "0:06:03",
-      "elevationM": 2,
-      "avgDisplay": "—"
-    },
-    {
-      "date": "Apr 24",
-      "name": "Evening Run",
-      "type": "Run",
-      "distanceKm": 5,
-      "movingTime": "0:33:08",
-      "elevationM": 24,
-      "avgDisplay": "6:40 / km"
-    },
-    {
-      "date": "Apr 24",
-      "name": "Evening Ride",
-      "type": "Ride",
-      "distanceKm": 2.7,
-      "movingTime": "0:09:53",
-      "elevationM": 12,
-      "avgDisplay": "16.4 km/h"
     }
   ]
 }
