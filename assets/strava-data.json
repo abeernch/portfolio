@@ -1,20 +1,20 @@
 {
-  "lastSync": "2026-05-23T06:39:06.241Z",
+  "lastSync": "2026-05-24T07:25:21.683Z",
   "totals": {
-    "distanceKm": 898,
-    "movingHours": 88,
-    "elevationM": 8954,
-    "activityCount": 158
+    "distanceKm": 879,
+    "movingHours": 87,
+    "elevationM": 8801,
+    "activityCount": 157
   },
   "mix": [
     {
       "label": "Cycling",
-      "value": 55,
+      "value": 54,
       "color": "#FF4F1F"
     },
     {
       "label": "Running",
-      "value": 31,
+      "value": 32,
       "color": "#00D9FF"
     },
     {
@@ -143,11 +143,6 @@
     ]
   },
   "heatmap": [
-    {
-      "date": "2025-05-24",
-      "distanceKm": 18.4,
-      "level": 2
-    },
     {
       "date": "2025-05-25",
       "distanceKm": 0,
@@ -1965,6 +1960,11 @@
     },
     {
       "date": "2026-05-23",
+      "distanceKm": 0,
+      "level": 0
+    },
+    {
+      "date": "2026-05-24",
       "distanceKm": 0,
       "level": 0
     }
