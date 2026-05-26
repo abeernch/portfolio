@@ -1,10 +1,10 @@
 {
-  "lastSync": "2026-05-25T08:25:42.715Z",
+  "lastSync": "2026-05-26T07:56:09.826Z",
   "totals": {
-    "distanceKm": 879,
-    "movingHours": 87,
-    "elevationM": 8801,
-    "activityCount": 157
+    "distanceKm": 866,
+    "movingHours": 86,
+    "elevationM": 8691,
+    "activityCount": 153
   },
   "mix": [
     {
@@ -143,11 +143,6 @@
     ]
   },
   "heatmap": [
-    {
-      "date": "2025-05-26",
-      "distanceKm": 13,
-      "level": 2
-    },
     {
       "date": "2025-05-27",
       "distanceKm": 9.8,
@@ -1965,6 +1960,11 @@
     },
     {
       "date": "2026-05-25",
+      "distanceKm": 0,
+      "level": 0
+    },
+    {
+      "date": "2026-05-26",
       "distanceKm": 0,
       "level": 0
     }
