@@ -1,15 +1,15 @@
 {
-  "lastSync": "2026-05-29T08:02:50.750Z",
+  "lastSync": "2026-05-30T06:51:46.022Z",
   "totals": {
-    "distanceKm": 846,
-    "movingHours": 84,
-    "elevationM": 8565,
-    "activityCount": 146
+    "distanceKm": 853,
+    "movingHours": 85,
+    "elevationM": 8629,
+    "activityCount": 149
   },
   "mix": [
     {
       "label": "Cycling",
-      "value": 55,
+      "value": 54,
       "color": "#FF4F1F"
     },
     {
@@ -111,7 +111,7 @@
       0,
       2.9,
       0,
-      0
+      4.9
     ],
     "swim": [
       0,
@@ -143,11 +143,6 @@
     ]
   },
   "heatmap": [
-    {
-      "date": "2025-05-30",
-      "distanceKm": 0,
-      "level": 0
-    },
     {
       "date": "2025-05-31",
       "distanceKm": 0,
@@ -1965,6 +1960,11 @@
     },
     {
       "date": "2026-05-29",
+      "distanceKm": 7.3,
+      "level": 1
+    },
+    {
+      "date": "2026-05-30",
       "distanceKm": 0,
       "level": 0
     }
@@ -1996,10 +1996,37 @@
       6.56,
       6.13,
       6.77,
-      6.91
+      6.77
     ]
   },
   "recent": [
+    {
+      "date": "May 29",
+      "name": "Night Walk",
+      "type": "Ride",
+      "distanceKm": 1.6,
+      "movingTime": "0:19:56",
+      "elevationM": 31,
+      "avgDisplay": "—"
+    },
+    {
+      "date": "May 29",
+      "name": "Night Run",
+      "type": "Run",
+      "distanceKm": 4.9,
+      "movingTime": "0:32:28",
+      "elevationM": 22,
+      "avgDisplay": "6:41 / km"
+    },
+    {
+      "date": "May 29",
+      "name": "Night Walk",
+      "type": "Ride",
+      "distanceKm": 0.8,
+      "movingTime": "0:08:44",
+      "elevationM": 11,
+      "avgDisplay": "—"
+    },
     {
       "date": "May 17",
       "name": "Evening Ride",
@@ -2043,33 +2070,6 @@
       "distanceKm": 1.1,
       "movingTime": "0:12:25",
       "elevationM": 5,
-      "avgDisplay": "—"
-    },
-    {
-      "date": "May 3",
-      "name": "Evening Ride",
-      "type": "Ride",
-      "distanceKm": 13.7,
-      "movingTime": "0:40:20",
-      "elevationM": 173,
-      "avgDisplay": "20.4 km/h"
-    },
-    {
-      "date": "May 3",
-      "name": "Afternoon Ride",
-      "type": "Ride",
-      "distanceKm": 22.3,
-      "movingTime": "1:09:16",
-      "elevationM": 236,
-      "avgDisplay": "19.3 km/h"
-    },
-    {
-      "date": "Apr 25",
-      "name": "Miranjni Descend",
-      "type": "Ride",
-      "distanceKm": 6.1,
-      "movingTime": "1:58:56",
-      "elevationM": 38,
       "avgDisplay": "—"
     }
   ]
