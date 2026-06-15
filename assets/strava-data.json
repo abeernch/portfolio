@@ -1,10 +1,10 @@
 {
-  "lastSync": "2026-06-14T08:18:09.742Z",
+  "lastSync": "2026-06-15T10:28:11.868Z",
   "totals": {
     "distanceKm": 868,
-    "movingHours": 85,
+    "movingHours": 83,
     "elevationM": 8828,
-    "activityCount": 150
+    "activityCount": 149
   },
   "mix": [
     {
@@ -60,7 +60,6 @@
     "ride": [
       0,
       0,
-      0,
       30.4,
       0,
       0,
@@ -83,10 +82,10 @@
       0,
       14.7,
       0,
+      0,
       0
     ],
     "run": [
-      0,
       0,
       0,
       0,
@@ -110,6 +109,7 @@
       2.9,
       0,
       4.9,
+      0,
       0,
       0
     ],
@@ -143,11 +143,6 @@
     ]
   },
   "heatmap": [
-    {
-      "date": "2025-06-15",
-      "distanceKm": 0,
-      "level": 0
-    },
     {
       "date": "2025-06-16",
       "distanceKm": 0,
@@ -1965,6 +1960,11 @@
     },
     {
       "date": "2026-06-14",
+      "distanceKm": 0,
+      "level": 0
+    },
+    {
+      "date": "2026-06-15",
       "distanceKm": 0,
       "level": 0
     }
