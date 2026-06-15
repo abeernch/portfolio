@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learning Lab &middot; Abeer Nasir Chaudhry</title>
+  <meta name="description" content="Interactive signal processing learning modules by Abeer Nasir Chaudhry, starting with the TDoA Suite for passive geolocation principles." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F1EDE5'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-size='18' fill='%23161614'%3EA%3C/text%3E%3C/svg%3E" />
+  <script>
+    (function() {
+      var stored = localStorage.getItem('theme');
+      var sysDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var theme = stored || (sysDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body class="learning-page">
+
+  <div class="ambient-signal" aria-hidden="true">
+    <svg viewBox="0 0 1440 900" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="signalFade" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="currentColor" stop-opacity="0"/>
+          <stop offset="15%" stop-color="currentColor" stop-opacity="1"/>
+          <stop offset="85%" stop-color="currentColor" stop-opacity="1"/>
+          <stop offset="100%" stop-color="currentColor" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <path class="ambient-wave w1" d="" stroke="url(#signalFade)"/>
+      <path class="ambient-wave w2" d="" stroke="url(#signalFade)"/>
+      <path class="ambient-wave w3" d="" stroke="url(#signalFade)"/>
+      <path class="ambient-wave w4" d="" stroke="url(#signalFade)"/>
+    </svg>
+  </div>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html" class="brand">
+        <span class="glyph">A</span>
+        <span>Abeer Nasir Chaudhry</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span></button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html#work">Work</a>
+        <a href="learning.html" class="active">Learning Lab</a>
+        <a href="research.html">Research</a>
+        <a href="strava.html">Strava</a>
+        <a href="photography.html">Photography</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="learning-hero">
+      <div class="container">
+        <div class="learning-hero-grid reveal-stagger">
+          <div class="learning-kicker mono">
+            <span class="caret">&gt;</span>
+            <span>Learning Lab &middot; Interactive signal processing</span>
+          </div>
+          <h1 class="learning-title">Learning <em>Lab</em></h1>
+          <p class="learning-lead">
+            A growing shelf of compact, interactive modules for engineering concepts that are easier to understand when the equations, geometry, and failure modes can be explored directly.
+          </p>
+          <div class="learning-hero-actions">
+            <a class="btn btn-primary" href="#modules">Browse Modules <span class="arrow">&rarr;</span></a>
+            <a class="btn" href="assets/learning/tdoa/TDoA_Interactive.html" target="_blank" rel="noopener">Launch TDoA Suite</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="modules" class="learning-modules">
+      <div class="container">
+        <header class="section-head reveal">
+          <div class="section-num">01</div>
+          <h2 class="section-title">Modules <em>first lab, extensible shelf.</em></h2>
+        </header>
+
+        <div class="learning-shell reveal">
+          <div class="learning-tabs" id="learningTabs" role="tablist" aria-label="Learning Lab modules"></div>
+          <div class="learning-panels" id="learningPanels"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="brand-block">Abeer Nasir Chaudhry<br/>
+        <span style="font-family:var(--mono);font-size:0.78rem;color:var(--ink-muted);letter-spacing:0.06em;">Signal Processing &middot; Algorithm Engineering</span>
+      </div>
+      <div class="meta">
+        <span><span class="signal-dot"></span> Available for collaboration</span>
+        <span>Last revised, <span id="footerYear">2026</span></span>
+        <span>Built with restraint &middot; <a href="#" style="border-bottom:1px solid currentColor;">Top &uarr;</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/learning/modules.js"></script>
+  <script>
+    (function () {
+      var modules = window.learningLabModules || [];
+      var tabs = document.getElementById('learningTabs');
+      var panels = document.getElementById('learningPanels');
+      if (!tabs || !panels || !modules.length) return;
+
+      function escapeHtml(value) {
+        return String(value || '').replace(/[&<>"']/g, function (ch) {
+          return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[ch];
+        });
+      }
+
+      function actionLink(href, label, extraAttrs) {
+        if (!href) return '<span class="btn module-action-disabled" aria-disabled="true">' + escapeHtml(label) + '</span>';
+        return '<a class="btn' + (label.indexOf('Launch') === 0 ? ' btn-primary' : '') + '" href="' + escapeHtml(href) + '"' + (extraAttrs || '') + '>' + escapeHtml(label) + '</a>';
+      }
+
+      tabs.innerHTML = modules.map(function (module, index) {
+        var selected = index === 0;
+        return '<button class="learning-tab' + (selected ? ' is-active' : '') + '" role="tab" id="tab-' + escapeHtml(module.id) + '" aria-controls="panel-' + escapeHtml(module.id) + '" aria-selected="' + selected + '" data-module="' + escapeHtml(module.id) + '">' +
+          '<span class="learning-tab-title">' + escapeHtml(module.title) + '</span>' +
+          '<span class="learning-tab-status">' + escapeHtml(module.status) + '</span>' +
+        '</button>';
+      }).join('');
+
+      panels.innerHTML = modules.map(function (module, index) {
+        var active = index === 0;
+        var tags = (module.tags || []).map(function (tag) {
+          return '<span>' + escapeHtml(tag) + '</span>';
+        }).join('');
+        return '<article class="learning-panel' + (active ? ' is-active' : '') + '" role="tabpanel" id="panel-' + escapeHtml(module.id) + '" aria-labelledby="tab-' + escapeHtml(module.id) + '"' + (active ? '' : ' hidden') + '>' +
+          '<div class="learning-panel-copy">' +
+            '<div class="card-tag">' + escapeHtml(module.status) + '</div>' +
+            '<h3>' + escapeHtml(module.title) + '</h3>' +
+            '<p>' + escapeHtml(module.summary) + '</p>' +
+            '<div class="card-meta">' + tags + '</div>' +
+          '</div>' +
+          '<div class="learning-panel-actions">' +
+            actionLink(module.launchHref, module.launchHref ? 'Launch Suite' : 'Launch Pending', module.launchHref ? ' target="_blank" rel="noopener"' : '') +
+            actionLink(module.pdfHref, module.pdfHref ? 'Download Principles PDF' : 'PDF Pending', module.pdfHref ? ' target="_blank" rel="noopener" download' : '') +
+          '</div>' +
+        '</article>';
+      }).join('');
+
+      tabs.addEventListener('click', function (event) {
+        var btn = event.target.closest('.learning-tab');
+        if (!btn) return;
+        var id = btn.getAttribute('data-module');
+        tabs.querySelectorAll('.learning-tab').forEach(function (tab) {
+          var selected = tab === btn;
+          tab.classList.toggle('is-active', selected);
+          tab.setAttribute('aria-selected', selected ? 'true' : 'false');
+        });
+        panels.querySelectorAll('.learning-panel').forEach(function (panel) {
+          var active = panel.id === 'panel-' + id;
+          panel.classList.toggle('is-active', active);
+          panel.hidden = !active;
+        });
+      });
+    })();
+  </script>
+  <script src="main.js"></script>
+</body>
+</html>
