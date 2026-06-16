@@ -89,6 +89,7 @@
         </div>
       </div>
     </section>
+
   </main>
 
   <footer class="site-footer">
@@ -103,6 +104,14 @@
       </div>
     </div>
   </footer>
+
+  <div class="traffic-tools" id="trafficTools">
+    <div class="traffic-panel" id="trafficPanel" hidden>
+      <a href="https://visitorbadge.io/status?path=https%3A%2F%2Fabeernch.github.io%2Fportfolio%2F" target="_blank" rel="noopener noreferrer">Portfolio Home</a>
+      <a href="https://visitorbadge.io/status?path=https%3A%2F%2Fabeernch.github.io%2Fportfolio%2Fassets%2Flearning%2Ftdoa%2FTDoA_Interactive.html" target="_blank" rel="noopener noreferrer">TDoA Suite</a>
+    </div>
+    <button class="traffic-toggle" id="trafficToggle" type="button" aria-controls="trafficPanel" aria-expanded="false">Traffic</button>
+  </div>
 
   <script src="assets/learning/modules.js"></script>
   <script>
@@ -165,6 +174,24 @@
           panel.hidden = !active;
         });
       });
+
+      var trafficTools = document.getElementById('trafficTools');
+      var trafficToggle = document.getElementById('trafficToggle');
+      var trafficPanel = document.getElementById('trafficPanel');
+
+      if (trafficTools && trafficToggle && trafficPanel) {
+        trafficToggle.addEventListener('click', function () {
+          var open = trafficToggle.getAttribute('aria-expanded') === 'true';
+          trafficToggle.setAttribute('aria-expanded', open ? 'false' : 'true');
+          trafficPanel.hidden = open;
+        });
+
+        document.addEventListener('click', function (event) {
+          if (trafficPanel.hidden || trafficTools.contains(event.target)) return;
+          trafficPanel.hidden = true;
+          trafficToggle.setAttribute('aria-expanded', 'false');
+        });
+      }
     })();
   </script>
   <script src="main.js"></script>
