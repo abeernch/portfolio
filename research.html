@@ -77,23 +77,8 @@
  <span class="sep">·</span>
  <span>Kainam&nbsp;Thomas&nbsp;Wong</span>
  </p>
- <div class="research-hero-stats">
- <div class="rh-stat">
- <span class="rh-stat-num">3</span>
- <span class="rh-stat-label">institutions across<br/>Pakistan, UAE, China</span>
- </div>
- <div class="rh-stat">
- <span class="rh-stat-num">1<sup>st</sup></span>
- <span class="rh-stat-label">analytical generalization<br/>of ETB to moving targets</span>
- </div>
- <div class="rh-stat">
- <span class="rh-stat-num">T<sub>3dB</sub></span>
- <span class="rh-stat-label">new tractable measure<br/>for ETB design trade-offs</span>
- </div>
- </div>
  <div class="research-hero-actions">
- <a class="btn btn-primary" href="https://doi.org/10.1109/TAES.2023.3282192" target="_blank" rel="noopener">Read on IEEE Xplore →</a>
- <a class="btn btn-ghost" href="#abstract">Walkthrough below ↓</a>
+ <a class="btn btn-ghost" href="#research-tabs">Browse research ↓</a>
  </div>
  </div>
  <!-- Animated beampattern visualization in the hero corner -->
@@ -179,6 +164,33 @@
  </g>
  </svg>
 </section>
+
+<!-- ============== RESEARCH TABS ============== -->
+<section class="research-tabs-shell" id="research-tabs">
+ <div class="container">
+ <div class="research-tabs-intro">
+ <span class="section-num">Research</span>
+ <h2 class="section-title">Publication notes <em>organized by work.</em></h2>
+ </div>
+ <div class="research-tabs" role="tablist" aria-label="Research publications">
+ <button class="research-tab is-active" id="research-tab-taes" type="button" role="tab" aria-selected="true" aria-controls="research-panel-taes" data-research-tab="taes">
+ <span class="research-tab-kicker">IEEE TAES · 2023</span>
+ <span class="research-tab-title">FDA target motion</span>
+ </button>
+ <button class="research-tab" id="research-tab-kappa" type="button" role="tab" aria-selected="false" aria-controls="research-panel-kappa" data-research-tab="kappa">
+ <span class="research-tab-kicker">Under review at IEEE TAES</span>
+ <span class="research-tab-title">κ for TDoA geometry</span>
+ </button>
+ <button class="research-tab" id="research-tab-thesis" type="button" role="tab" aria-selected="false" aria-controls="research-panel-thesis" data-research-tab="thesis">
+ <span class="research-tab-kicker">MS thesis · AUS</span>
+ <span class="research-tab-title">FDA extensions</span>
+ </button>
+ </div>
+ </div>
+</section>
+
+<div class="research-tab-panels">
+<div class="research-tab-panel is-active" id="research-panel-taes" role="tabpanel" aria-labelledby="research-tab-taes" data-research-panel="taes" tabindex="0">
 
 <!-- ============== ABSTRACT ============== -->
 <section id="abstract" class="paper-section">
@@ -490,6 +502,67 @@ doi: 10.1109/TAES.2023.3282192.</pre>
  </div>
 </section>
 
+</div>
+
+<div class="research-tab-panel" id="research-panel-kappa" role="tabpanel" aria-labelledby="research-tab-kappa" data-research-panel="kappa" tabindex="0" hidden>
+<section class="paper-section research-summary-panel">
+ <div class="container narrow">
+ <div class="section-head">
+ <span class="section-num">P/02</span>
+ <h2 class="section-title">κ for TDoA multilateration <em>geometry quality beyond GDoP.</em></h2>
+ </div>
+ <p class="figure-intro">
+ This preprint introduces κ<sub>N</sub> as the leading coefficient of the analytical TDoA K-quadratic: a geometry-quality diagnostic that catches closed-form solver pathologies GDoP can miss. The paper separates branch-divergence behavior from the Jacobian and branch-merge locus, then validates the metric through algebraic identities, Monte Carlo sensitivity checks, and ADS-B-paired over-the-air data from an operational four-node array.
+ </p>
+ <div class="research-summary-grid">
+ <article class="research-summary-card">
+ <span class="challenge-tag">Status</span>
+ <h3>Preprint available</h3>
+ <p>arXiv:2606.14372. Under review at IEEE TAES.</p>
+ </article>
+ <article class="research-summary-card">
+ <span class="challenge-tag">Contribution</span>
+ <h3>Complementary geometry layer</h3>
+ <p>κ<sub>N</sub> is generalized to N dimensions as ||B||<sup>2</sup> - 1, recovering the known 2D three-sensor case while making the diagnostic directly computable in solver-state coordinates.</p>
+ </article>
+ <article class="research-summary-card">
+ <span class="challenge-tag">Validation</span>
+ <h3>Analytical and empirical checks</h3>
+ <p>Two closed-form identities connect κ<sub>N</sub> to the Jacobian determinant and discriminant; Monte Carlo validates σ<sub>κ</sub> to about 2% median relative error.</p>
+ </article>
+ </div>
+ <div class="research-detail-grid">
+ <article class="research-detail-card">
+ <span class="challenge-tag">What it adds</span>
+ <h3>Two geometry-quality layers</h3>
+ <p>GDoP captures Jacobian-driven noise amplification. κ<sub>N</sub> captures a separate branch-divergence singularity of the closed-form polynomial, enabling a 2 × 2 health classification of target positions.</p>
+ </article>
+ <article class="research-detail-card">
+ <span class="challenge-tag">Evidence</span>
+ <h3>Atlas-scale complementarity</h3>
+ <p>A 1.44 million-sample dimensionless atlas confirms the identities at machine precision and shows κ-bad and GDoP-bad regions are non-trivially disjoint.</p>
+ </article>
+ <article class="research-detail-card">
+ <span class="challenge-tag">Operational case</span>
+ <h3>Four-node deployment check</h3>
+ <p>Using empirically estimated ToA noise from ADS-B-paired captures, the theory-predicted threshold and downstream Monte Carlo agree on the per-subsystem ordering, with subsystem B most restrictive.</p>
+ </article>
+ <article class="research-detail-card">
+ <span class="challenge-tag">Practical use</span>
+ <h3>Runtime array-health flag</h3>
+ <p>The result gives receiver-array designers a second geometry gate to report alongside GDoP, especially useful when multiple 2D subsystems and a 3D solver coexist in the same array.</p>
+ </article>
+ </div>
+ <div class="research-panel-actions">
+ <a class="btn btn-primary" href="https://arxiv.org/abs/2606.14372" target="_blank" rel="noopener">Read on arXiv →</a>
+ <a class="btn btn-ghost" href="index.html#publications">Publication list</a>
+ </div>
+ </div>
+</section>
+</div>
+
+<div class="research-tab-panel" id="research-panel-thesis" role="tabpanel" aria-labelledby="research-tab-thesis" data-research-panel="thesis" tabindex="0" hidden>
+
 <!-- ============== THESIS CONTRIBUTIONS ============== -->
 <section id="thesis" class="paper-section">
  <div class="container narrow">
@@ -618,15 +691,15 @@ doi: 10.1109/TAES.2023.3282192.</pre>
  </div>
 </section>
 
+</div>
+</div>
+
 <!-- ============== CTA STRIP ============== -->
 <section class="cta-strip">
  <div class="container">
  <div class="cta-content">
- <h2>Want to dig into more of the work?</h2>
- <p>The portfolio has the full project list, publications, and how to get in touch.</p>
  <div class="cta-actions">
  <a class="btn btn-primary" href="index.html">← Back to portfolio</a>
- <a class="btn btn-ghost" href="index.html#contact">Get in touch</a>
  </div>
  </div>
  </div>
@@ -637,14 +710,8 @@ doi: 10.1109/TAES.2023.3282192.</pre>
 <!-- ============== FOOTER ============== -->
 <footer class="site-footer">
  <div class="container">
- <div class="brand-block">Abeer Nasir Chaudhry<br/>
- <span style="font-family:var(--mono);font-size:0.78rem;color:var(--ink-muted);letter-spacing:0.06em;">Signal Processing &middot; Algorithm Engineering</span>
- </div>
- <div class="meta">
- <span><span class="signal-dot"></span> Available for collaboration</span>
- <span>Last revised <span id="footerYear">2026</span></span>
- <span><a href="index.html" style="border-bottom:1px solid currentColor;">← Back to portfolio</a></span>
- </div>
+ <div class="copyright">© <span id="footerYear">2026</span>. All rights reserved.</div>
+ <a class="footer-top" href="index.html">← Back to portfolio</a>
  </div>
 </footer>
 

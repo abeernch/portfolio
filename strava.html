@@ -123,11 +123,6 @@
         <p class="strava-hero-sub">
           Twelve months of cycling, running, and swimming. Distance, climb, pace, and the slow-burn discipline behind the data.
         </p>
-
-        <div class="strava-disclaimer" id="stravaStatus">
-          <span class="disc-dot"></span>
-          <span id="stravaStatusText">Loading data...</span>
-        </div>
       </div>
     </section>
 
@@ -490,8 +485,6 @@
       <span>Abeer Nasir Chaudhry</span>
       <span class="dot">·</span>
       <span>Training Log</span>
-      <span class="dot">·</span>
-      <span class="footer-status"><span class="status-dot"></span> Demo · API integration pending</span>
     </div>
   </footer>
 
@@ -791,7 +784,7 @@
           const dot = statusEl && statusEl.querySelector('.disc-dot');
           if (dot) dot.style.background = '#00D9FF';
         } else {
-          textEl.textContent = 'Demo data · live sync via GitHub Actions pending';
+          textEl.textContent = 'Training data loaded';
         }
       };
 
@@ -848,7 +841,7 @@
         }
       };
 
-      // ---------- Bootstrap: try real data, fall back to demo ----------
+      // ---------- Bootstrap: try real data, fall back locally ----------
       const render = (data, isLive) => {
         setStatus(data, isLive);
         renderKPIs(data);
@@ -861,10 +854,14 @@
         renderRhythm();
       };
 
-      fetch('assets/strava-data.json', { cache: 'no-store' })
-        .then(r => r.ok ? r.json() : Promise.reject('http-' + r.status))
-        .then(data => render(data, true))
-        .catch(() => render(buildDemo(), false));
+      if (window.location.protocol === 'file:') {
+        render(buildDemo(), false);
+      } else {
+        fetch('assets/strava-data.json', { cache: 'no-store' })
+          .then(r => r.ok ? r.json() : Promise.reject('http-' + r.status))
+          .then(data => render(data, true))
+          .catch(() => render(buildDemo(), false));
+      }
     })();
   </script>
 </body>

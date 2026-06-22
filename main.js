@@ -160,6 +160,45 @@
     revealEls.forEach(el => el.classList.add('in'));
   }
 
+  /* ---------- Research publication tabs ---------- */
+  (function researchTabs() {
+    const tabs = Array.from(document.querySelectorAll('[data-research-tab]'));
+    const panels = Array.from(document.querySelectorAll('[data-research-panel]'));
+    if (!tabs.length || !panels.length) return;
+
+    const setActive = (id, focusPanel) => {
+      tabs.forEach(tab => {
+        const active = tab.dataset.researchTab === id;
+        tab.classList.toggle('is-active', active);
+        tab.setAttribute('aria-selected', active ? 'true' : 'false');
+        tab.tabIndex = active ? 0 : -1;
+      });
+      panels.forEach(panel => {
+        const active = panel.dataset.researchPanel === id;
+        panel.classList.toggle('is-active', active);
+        panel.hidden = !active;
+        if (active && focusPanel) panel.focus({ preventScroll: true });
+      });
+    };
+
+    tabs.forEach((tab, index) => {
+      tab.tabIndex = tab.classList.contains('is-active') ? 0 : -1;
+      tab.addEventListener('click', () => setActive(tab.dataset.researchTab, false));
+      tab.addEventListener('keydown', (event) => {
+        const last = tabs.length - 1;
+        let next = null;
+        if (event.key === 'ArrowRight' || event.key === 'ArrowDown') next = index === last ? 0 : index + 1;
+        if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') next = index === 0 ? last : index - 1;
+        if (event.key === 'Home') next = 0;
+        if (event.key === 'End') next = last;
+        if (next === null) return;
+        event.preventDefault();
+        tabs[next].focus();
+        setActive(tabs[next].dataset.researchTab, false);
+      });
+    });
+  })();
+
   /* ---------- Active nav link based on section in view ---------- */
   const sectionLinks = document.querySelectorAll('.nav-links a[href^="#"]');
   if (sectionLinks.length && 'IntersectionObserver' in window) {
