@@ -511,9 +511,9 @@ doi: 10.1109/TAES.2023.3282192.</pre>
  <span class="section-num">P/02</span>
  <h2 class="section-title">κ for TDoA multilateration <em>geometry quality beyond GDoP.</em></h2>
  </div>
- <p class="figure-intro">
- This preprint introduces κ<sub>N</sub> as the leading coefficient of the analytical TDoA K-quadratic: a geometry-quality diagnostic that catches closed-form solver pathologies GDoP can miss. The paper separates branch-divergence behavior from the Jacobian and branch-merge locus, then validates the metric through algebraic identities, Monte Carlo sensitivity checks, and ADS-B-paired over-the-air data from an operational four-node array.
- </p>
+<p class="figure-intro">
+ This preprint introduces κ<sub>N</sub> as a geometry-quality diagnostic that complements GDoP for closed-form TDoA multilateration. It separates branch-divergence behavior from the Jacobian/branch-merge locus and validates the metric with closed-form identities, Monte Carlo sensitivity checks, and ADS-B-paired deployment data.
+</p>
  <div class="research-summary-grid">
  <article class="research-summary-card">
  <span class="challenge-tag">Status</span>
@@ -523,7 +523,7 @@ doi: 10.1109/TAES.2023.3282192.</pre>
  <article class="research-summary-card">
  <span class="challenge-tag">Contribution</span>
  <h3>Complementary geometry layer</h3>
- <p>κ<sub>N</sub> is generalized to N dimensions as ||B||<sup>2</sup> - 1, recovering the known 2D three-sensor case while making the diagnostic directly computable in solver-state coordinates.</p>
+ <p>κ<sub>N</sub> generalizes the 2D three-sensor case to N dimensions as ||B||<sup>2</sup> - 1, keeping the diagnostic directly computable in solver-state coordinates.</p>
  </article>
  <article class="research-summary-card">
  <span class="challenge-tag">Validation</span>
@@ -531,27 +531,21 @@ doi: 10.1109/TAES.2023.3282192.</pre>
  <p>Two closed-form identities connect κ<sub>N</sub> to the Jacobian determinant and discriminant; Monte Carlo validates σ<sub>κ</sub> to about 2% median relative error.</p>
  </article>
  </div>
- <div class="research-detail-grid">
- <article class="research-detail-card">
- <span class="challenge-tag">What it adds</span>
- <h3>Two geometry-quality layers</h3>
- <p>GDoP captures Jacobian-driven noise amplification. κ<sub>N</sub> captures a separate branch-divergence singularity of the closed-form polynomial, enabling a 2 × 2 health classification of target positions.</p>
- </article>
- <article class="research-detail-card">
- <span class="challenge-tag">Evidence</span>
- <h3>Atlas-scale complementarity</h3>
- <p>A 1.44 million-sample dimensionless atlas confirms the identities at machine precision and shows κ-bad and GDoP-bad regions are non-trivially disjoint.</p>
- </article>
- <article class="research-detail-card">
- <span class="challenge-tag">Operational case</span>
- <h3>Four-node deployment check</h3>
- <p>Using empirically estimated ToA noise from ADS-B-paired captures, the theory-predicted threshold and downstream Monte Carlo agree on the per-subsystem ordering, with subsystem B most restrictive.</p>
- </article>
- <article class="research-detail-card">
- <span class="challenge-tag">Practical use</span>
- <h3>Runtime array-health flag</h3>
- <p>The result gives receiver-array designers a second geometry gate to report alongside GDoP, especially useful when multiple 2D subsystems and a 3D solver coexist in the same array.</p>
- </article>
+ <div class="research-figure-grid">
+ <figure class="research-paper-figure">
+ <img src="assets/kappa-complementarity.png" alt="κ and GDoP complementarity plots from the paper">
+ <figcaption>
+ <span class="fig-num">Fig. 4-5</span>
+ κ and GDoP are complementary, not interchangeable.
+ </figcaption>
+ </figure>
+ <figure class="research-paper-figure">
+ <img src="assets/kappa-operational-threshold.png" alt="Operational threshold comparison from the paper">
+ <figcaption>
+ <span class="fig-num">Fig. 8</span>
+ Predicted versus measured threshold at deployment noise.
+ </figcaption>
+ </figure>
  </div>
  <div class="research-panel-actions">
  <a class="btn btn-primary" href="https://arxiv.org/abs/2606.14372" target="_blank" rel="noopener">Read on arXiv →</a>
