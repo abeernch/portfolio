@@ -1,5 +1,5 @@
 {
-  "lastSync": "2026-06-26T07:57:52.386Z",
+  "lastSync": "2026-06-27T06:57:12.880Z",
   "totals": {
     "distanceKm": 857,
     "movingHours": 77,
@@ -143,11 +143,6 @@
     ]
   },
   "heatmap": [
-    {
-      "date": "2025-06-27",
-      "distanceKm": 0,
-      "level": 0
-    },
     {
       "date": "2025-06-28",
       "distanceKm": 0,
@@ -1965,6 +1960,11 @@
     },
     {
       "date": "2026-06-26",
+      "distanceKm": 0,
+      "level": 0
+    },
+    {
+      "date": "2026-06-27",
       "distanceKm": 0,
       "level": 0
     }
